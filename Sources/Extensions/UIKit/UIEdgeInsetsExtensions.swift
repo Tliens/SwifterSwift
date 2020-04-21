@@ -10,14 +10,14 @@ import UIKit
 
 // MARK: - Properties
 extension UIEdgeInsets {
-    /// SwifterSwift: Return the vertical insets. The vertical insets is composed by top + bottom.
+    /// 垂直内间距
     ///
     public var vertical: CGFloat {
         // Source: https://github.com/MessageKit/MessageKit/blob/master/Sources/Extensions/UIEdgeInsets%2BExtensions.swift
         return top + bottom
     }
 
-    /// SwifterSwift: Return the horizontal insets. The horizontal insets is composed by  left + right.
+    /// 水平内间距
     ///
     public var horizontal: CGFloat {
         // Source: https://github.com/MessageKit/MessageKit/blob/master/Sources/Extensions/UIEdgeInsets%2BExtensions.swift

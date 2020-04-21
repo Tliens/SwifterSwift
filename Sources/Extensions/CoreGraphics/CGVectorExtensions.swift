@@ -9,10 +9,10 @@
 #if canImport(CoreGraphics)
 import CoreGraphics
 
-// MARK: - Properties
+// MARK: - 属性
 public extension CGVector {
 
-    /// SwifterSwift: The angle of rotation (in radians) of the vector.
+    /// 夹角
     /// The range of the angle is -π to π; an angle of 0 points to the right.
     ///
     /// https://en.wikipedia.org/wiki/Atan2
@@ -20,7 +20,7 @@ public extension CGVector {
         return atan2(dy, dx)
     }
 
-    /// SwifterSwift: The magnitude (or length) of the vector.
+    /// 向量的值
     ///
     /// https://en.wikipedia.org/wiki/Euclidean_vector#Length
     public var magnitude: CGFloat {
@@ -32,7 +32,7 @@ public extension CGVector {
 // MARK: - Initializers
 public extension CGVector {
 
-    /// SwifterSwift: Creates a vector with the given magnitude and angle.
+    /// 通过给定的值和角度创建向量
     ///
     /// https://www.grc.nasa.gov/WWW/K-12/airplane/vectpart.html
     ///

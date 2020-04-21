@@ -20,52 +20,52 @@ import Cocoa
 // MARK: - Properties
 public extension CGFloat {
 
-    /// SwifterSwift: Absolute of CGFloat value.
+    /// CGFloat 绝对值
     public var abs: CGFloat {
         return Swift.abs(self)
     }
 
-    /// SwifterSwift: Ceil of CGFloat value.
+    /// CGFloat向上取整
     public var ceil: CGFloat {
         return Foundation.ceil(self)
     }
 
-    /// SwifterSwift: Radian value of degree input.
+    /// 度数转 弧度
     public var degreesToRadians: CGFloat {
         return .pi * self / 180.0
     }
 
-    /// SwifterSwift: Floor of CGFloat value.
+    /// CGFloat向下取整
     public var floor: CGFloat {
         return Foundation.floor(self)
     }
 
-    /// SwifterSwift: Check if CGFloat is positive.
+    /// 检验是否为正数
     public var isPositive: Bool {
         return self > 0
     }
 
-    /// SwifterSwift: Check if CGFloat is negative.
+    /// 检查是否为负数
     public var isNegative: Bool {
         return self < 0
     }
 
-    /// SwifterSwift: Int.
+    /// 强转Int
     public var int: Int {
         return Int(self)
     }
 
-    /// SwifterSwift: Float.
+    /// 强转float
     public var float: Float {
         return Float(self)
     }
 
-    /// SwifterSwift: Double.
+    /// 强转double
     public var double: Double {
         return Double(self)
     }
 
-    /// SwifterSwift: Degree value of radian input.
+    /// 弧度转角度
     public var radiansToDegrees: CGFloat {
         return self * 180 / CGFloat.pi
     }

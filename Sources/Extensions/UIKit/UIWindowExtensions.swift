@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UIWindow {
 
-    /// SwifterSwift: Switch current root view controller with a new view controller.
+    /// 切换根视图
     ///
     /// - Parameters:
     ///   - viewController: new view controller.

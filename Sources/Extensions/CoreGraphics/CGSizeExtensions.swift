@@ -20,29 +20,29 @@ import Cocoa
 // MARK: - Methods
 public extension CGSize {
 
-    /// SwifterSwift: Aspect fit CGSize.
+    /// aspectFit，小边撑满，大边比例缩放
     ///
     ///     let rect = CGSize(width: 120, height: 80)
     ///     let parentRect  = CGSize(width: 100, height: 50)
     ///     let newRect = rect.aspectFit(to: parentRect)
     ///     //newRect.width = 75 , newRect = 50
     ///
-    /// - Parameter boundingSize: bounding size to fit self to.
-    /// - Returns: self fitted into given bounding size
+    /// - Parameter boundingSize: 填充区域.
+    /// - Returns: 显示的区域
     public func aspectFit(to boundingSize: CGSize) -> CGSize {
         let minRatio = min(boundingSize.width / width, boundingSize.height / height)
         return CGSize(width: width * minRatio, height: height * minRatio)
     }
 
-    /// SwifterSwift: Aspect fill CGSize.
+    /// aspectFill，大边撑满，小边比例缩放
     ///
     ///     let rect = CGSize(width: 20, height: 120)
     ///     let parentRect  = CGSize(width: 100, height: 60)
     ///     let newRect = rect.aspectFit(to: parentRect)
     ///     //newRect.width = 100 , newRect = 60
     ///
-    /// - Parameter boundingSize: bounding size to fill self to.
-    /// - Returns: self filled into given bounding size
+    /// - Parameter boundingSize: 填充区域.
+    /// - Returns: 显示的区域
     public func aspectFill(to boundingSize: CGSize) -> CGSize {
         let minRatio = max(boundingSize.width / width, boundingSize.height / height)
         let aWidth = min(width * minRatio, boundingSize.width)
@@ -55,7 +55,7 @@ public extension CGSize {
 // MARK: - Operators
 public extension CGSize {
 
-    /// SwifterSwift: Add two CGSize
+    /// CGSize相加
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
@@ -65,12 +65,12 @@ public extension CGSize {
     /// - Parameters:
     ///   - lhs: CGSize to add to.
     ///   - rhs: CGSize to add.
-    /// - Returns: The result comes from the addition of the two given CGSize struct.
+    /// - Returns: 相加的结构
     public static func + (lhs: CGSize, rhs: CGSize) -> CGSize {
         return CGSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
     }
 
-    /// SwifterSwift: Add a CGSize to self.
+    /// CGSize 加等
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
@@ -85,7 +85,7 @@ public extension CGSize {
         lhs.height += rhs.height
     }
 
-    /// SwifterSwift: Subtract two CGSize
+    /// CGSize 相减
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
@@ -100,7 +100,7 @@ public extension CGSize {
         return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
     }
 
-    /// SwifterSwift: Subtract a CGSize from self.
+    /// CGSize 加=减等
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
@@ -115,7 +115,7 @@ public extension CGSize {
         lhs.height -= rhs.height
     }
 
-    /// SwifterSwift: Multiply two CGSize
+    /// CGSize 乘法
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
@@ -130,7 +130,7 @@ public extension CGSize {
         return CGSize(width: lhs.width * rhs.width, height: lhs.height * rhs.height)
     }
 
-    /// SwifterSwift: Multiply a CGSize with a scalar.
+    /// CGSize 右乘
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let result = sizeA * 5
@@ -144,7 +144,7 @@ public extension CGSize {
         return CGSize(width: lhs.width * scalar, height: lhs.height * scalar)
     }
 
-    /// SwifterSwift: Multiply a CGSize with a scalar.
+    /// CGSize 左乘
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let result = 5 * sizeA
@@ -158,7 +158,7 @@ public extension CGSize {
         return CGSize(width: scalar * rhs.width, height: scalar * rhs.height)
     }
 
-    /// SwifterSwift: Multiply self with a CGSize.
+    /// CGSize 乘等
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     let sizeB = CGSize(width: 3, height: 4)
@@ -173,7 +173,7 @@ public extension CGSize {
         lhs.height *= rhs.height
     }
 
-    /// SwifterSwift: Multiply self with a scalar.
+    /// CGSize 乘等
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)
     ///     sizeA *= 3

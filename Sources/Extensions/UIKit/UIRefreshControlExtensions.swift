@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UIRefreshControl {
 
-    /// SwifterSwift: Programatically begin refresh control inside of UITableView.
+    /// 在UITableView内开始刷新控件。
     ///
     /// - Parameters:
     ///   - tableView: UITableView instance, inside which the refresh control is contained.

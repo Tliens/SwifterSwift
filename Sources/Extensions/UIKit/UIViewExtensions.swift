@@ -12,7 +12,7 @@ import UIKit
 // MARK: - enums
 public extension UIView {
 
-    /// SwifterSwift: Shake directions of a view.
+    /// 视图滚动的方向
     ///
     /// - horizontal: Shake left and right.
     /// - vertical: Shake up and down.
@@ -24,7 +24,7 @@ public extension UIView {
         case vertical
     }
 
-    /// SwifterSwift: Angle units.
+    /// 角度单位
     ///
     /// - degrees: degrees.
     /// - radians: radians.
@@ -36,7 +36,7 @@ public extension UIView {
         case radians
     }
 
-    /// SwifterSwift: Shake animations types.
+    /// 动画类型
     ///
     /// - linear: linear animation.
     /// - easeIn: easeIn animation.

@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Properties
 public extension UIDatePicker {
 
-    /// SwifterSwift: Text color of UIDatePicker.
+    /// UIDatePicker文字颜色
     public var textColor: UIColor? {
         set {
             setValue(newValue, forKeyPath: "textColor")

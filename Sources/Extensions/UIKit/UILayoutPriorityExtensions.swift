@@ -12,8 +12,8 @@ import UIKit
 extension UILayoutPriority: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
 
     // MARK: - Initializers
-
-    /// SwifterSwift: Initialize `UILayoutPriority` with a float literal
+    
+    /// float 字面量
     ///
     ///     constraint.priority = 0.5
     ///
@@ -22,7 +22,7 @@ extension UILayoutPriority: ExpressibleByFloatLiteral, ExpressibleByIntegerLiter
         self.init(rawValue: value)
     }
 
-    /// SwifterSwift: Initialize `UILayoutPriority` with an integer literal
+    /// Int loat 字面量
     ///
     ///     constraint.priority = 5
     ///
