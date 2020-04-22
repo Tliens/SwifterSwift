@@ -12,12 +12,12 @@ import UIKit
 // MARK: - Properties
 public extension UITableView {
 
-    /// SwifterSwift: Index path of last row in tableView.
+    /// tableview中的最后一行
     public var indexPathForLastRow: IndexPath? {
         return indexPathForLastRow(inSection: lastSection)
     }
 
-    /// SwifterSwift: Index of last section in tableView.
+    /// tableview中的最后一组
     public var lastSection: Int {
         return numberOfSections > 0 ? numberOfSections - 1 : 0
     }
@@ -27,7 +27,7 @@ public extension UITableView {
 // MARK: - Methods
 public extension UITableView {
 
-    /// SwifterSwift: Number of all rows in all sections of tableView.
+    /// tableview中所有的行数
     ///
     /// - Returns: The count of all rows in the tableView.
     public func numberOfRows() -> Int {
@@ -40,7 +40,7 @@ public extension UITableView {
         return rowCount
     }
 
-    /// SwifterSwift: IndexPath for last row in section.
+    /// section中的最后一行
     ///
     /// - Parameter section: section to get last row in.
     /// - Returns: optional last indexPath for last row in section (if applicable).
@@ -52,7 +52,7 @@ public extension UITableView {
         return IndexPath(row: numberOfRows(inSection: section) - 1, section: section)
     }
 
-    /// Reload data with a completion handler.
+    /// 带block的重新加载数据
     ///
     /// - Parameter completion: completion handler to run after reloadData finishes.
     public func reloadData(_ completion: @escaping () -> Void) {
@@ -63,17 +63,17 @@ public extension UITableView {
         })
     }
 
-    /// SwifterSwift: Remove TableFooterView.
+    /// 移除 TableFooterView.
     public func removeTableFooterView() {
         tableFooterView = nil
     }
 
-    /// SwifterSwift: Remove TableHeaderView.
+    /// 移除 TableHeaderView.
     public func removeTableHeaderView() {
         tableHeaderView = nil
     }
 
-    /// SwifterSwift: Scroll to bottom of TableView.
+    /// 滚动到底部
     ///
     /// - Parameter animated: set true to animate scroll (default is true).
     public func scrollToBottom(animated: Bool = true) {
@@ -81,14 +81,14 @@ public extension UITableView {
         setContentOffset(bottomOffset, animated: animated)
     }
 
-    /// SwifterSwift: Scroll to top of TableView.
+    /// 滚动到顶部
     ///
     /// - Parameter animated: set true to animate scroll (default is true).
     public func scrollToTop(animated: Bool = true) {
         setContentOffset(CGPoint.zero, animated: animated)
     }
 
-    /// SwifterSwift: Dequeue reusable UITableViewCell using class name
+    /// 根据类名重用cell
     ///
     /// - Parameter name: UITableViewCell type
     /// - Returns: UITableViewCell object with associated class name.
@@ -99,7 +99,7 @@ public extension UITableView {
         return cell
     }
 
-    /// SwiferSwift: Dequeue reusable UITableViewCell using class name for indexPath
+    ///根据类名为indexpath重用Cell
     ///
     /// - Parameters:
     ///   - name: UITableViewCell type.
@@ -112,7 +112,7 @@ public extension UITableView {
         return cell
     }
 
-    /// SwiferSwift: Dequeue reusable UITableViewHeaderFooterView using class name
+    /// 使用类名重用 UITableViewHeaderFooterView
     ///
     /// - Parameter name: UITableViewHeaderFooterView type
     /// - Returns: UITableViewHeaderFooterView object with associated class name.
@@ -123,7 +123,7 @@ public extension UITableView {
         return headerFooterView
     }
 
-    /// SwifterSwift: Register UITableViewHeaderFooterView using class name
+    /// 使用nib和类名注册 UITableViewHeaderFooterView
     ///
     /// - Parameters:
     ///   - nib: Nib file used to create the header or footer view.
@@ -132,21 +132,21 @@ public extension UITableView {
         register(nib, forHeaderFooterViewReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UITableViewHeaderFooterView using class name
+    /// 使用类名注册 UITableViewHeaderFooterView
     ///
     /// - Parameter name: UITableViewHeaderFooterView type
     public func register<T: UITableViewHeaderFooterView>(headerFooterViewClassWith name: T.Type) {
         register(T.self, forHeaderFooterViewReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UITableViewCell using class name
+    /// 类名注册cell
     ///
     /// - Parameter name: UITableViewCell type
     public func register<T: UITableViewCell>(cellWithClass name: T.Type) {
         register(T.self, forCellReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UITableViewCell using class name
+    /// nib注册cell
     ///
     /// - Parameters:
     ///   - nib: Nib file used to create the tableView cell.
@@ -155,8 +155,7 @@ public extension UITableView {
         register(nib, forCellReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UITableViewCell with .xib file using only its corresponding class.
-    ///               Assumes that the .xib filename and cell class has the same name.
+    /// 使用.xib文件注册UITableViewCell，只使用它对应的类。假设.xib文件名和单元格类具有相同的名称。
     ///
     /// - Parameters:
     ///   - name: UITableViewCell type.
@@ -172,7 +171,7 @@ public extension UITableView {
         register(UINib(nibName: identifier, bundle: bundle), forCellReuseIdentifier: identifier)
     }
 
-    /// SwifterSwift: Check whether IndexPath is valid within the tableView
+    /// 校验indexPath是否有效
     ///
     /// - Parameter indexPath: An IndexPath to check
     /// - Returns: Boolean value for valid or invalid IndexPath
@@ -180,7 +179,7 @@ public extension UITableView {
         return indexPath.section < numberOfSections && indexPath.row < numberOfRows(inSection: indexPath.section)
     }
 
-    /// SwifterSwift: Safely scroll to possibly invalid IndexPath
+    /// 安全滚动到 indexPath
     ///
     /// - Parameters:
     ///   - indexPath: Target IndexPath to scroll to
