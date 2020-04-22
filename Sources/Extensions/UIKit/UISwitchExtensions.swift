@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UISwitch {
 
-    /// SwifterSwift: Toggle a UISwitch
+    /// 切换UISwitch
     ///
     /// - Parameter animated: set true to animate the change (default is true)
     public func toggle(animated: Bool = true) {
