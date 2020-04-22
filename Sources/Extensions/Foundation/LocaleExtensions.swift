@@ -12,7 +12,7 @@ import Foundation
 // MARK: - Properties
 public extension Locale {
 
-    /// SwifterSwift: UNIX representation of locale usually used for normalizing.
+    /// 语言环境的UNIX表示，通常用于规范化。
     public static var posix: Locale {
         return Locale(identifier: "en_US_POSIX")
     }

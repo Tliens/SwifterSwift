@@ -12,7 +12,7 @@ import Foundation
 // MARK: - Methods
 public extension UserDefaults {
 
-    /// SwifterSwift: get object from UserDefaults by using subscript
+    /// 通过使用下标从UserDefaults获取对象
     ///
     /// - Parameter key: key in the current user's defaults database.
     public subscript(key: String) -> Any? {
@@ -24,7 +24,7 @@ public extension UserDefaults {
         }
     }
 
-    /// SwifterSwift: Float from UserDefaults.
+    /// 从UserDefaults获取Float。
     ///
     /// - Parameter forKey: key to find float for.
     /// - Returns: Float object for key (if exists).
@@ -32,7 +32,7 @@ public extension UserDefaults {
         return object(forKey: key) as? Float
     }
 
-    /// SwifterSwift: Date from UserDefaults.
+    /// 从UserDefaults获取Date
     ///
     /// - Parameter forKey: key to find date for.
     /// - Returns: Date object for key (if exists).
@@ -40,7 +40,7 @@ public extension UserDefaults {
         return object(forKey: key) as? Date
     }
 
-    /// SwifterSwift: Retrieves a Codable object from UserDefaults.
+    ///从UserDefaults中检索一个可编码的对象。
     ///
     /// - Parameters:
     ///   - type: Class that conforms to the Codable protocol.
@@ -52,7 +52,7 @@ public extension UserDefaults {
         return try? decoder.decode(type.self, from: data)
     }
 
-    /// SwifterSwift: Allows storing of Codable objects to UserDefaults.
+    /// 允许将可编程对象存储为UserDefaults。
     ///
     /// - Parameters:
     ///   - object: Codable object to store.

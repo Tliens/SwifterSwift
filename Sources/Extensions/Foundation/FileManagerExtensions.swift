@@ -11,7 +11,7 @@ import Foundation
 
 public extension FileManager {
 
-    /// SwifterSwift: Read from a JSON file at a given path.
+    /// 从给定路径的JSON文件中读取
     ///
     /// - Parameters:
     ///   - path: JSON file path.
@@ -28,7 +28,7 @@ public extension FileManager {
         return json as? [String: Any]
     }
 
-    /// SwifterSwift: Read from a JSON file with a given filename.
+    /// 从具有给定文件名的JSON文件中读取。
     ///
     /// - Parameters:
     ///   - filename: File to read.

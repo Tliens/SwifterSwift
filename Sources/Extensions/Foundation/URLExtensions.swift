@@ -17,7 +17,7 @@ import AVFoundation
 // MARK: - Properties
 public extension URL {
 
-    /// SwifterSwift: Dictionary of the URL's query parameters
+    /// 获取query参数
     public var queryParameters: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false), let queryItems = components.queryItems else { return nil }
 
@@ -35,7 +35,7 @@ public extension URL {
 // MARK: - Methods
 public extension URL {
 
-    /// SwifterSwift: URL with appending query parameters.
+    /// 添加query参数 返回url
     ///
     ///		let url = URL(string: "https://google.com")!
     ///		let param = ["q": "Swifter Swift"]
@@ -51,7 +51,7 @@ public extension URL {
         return urlComponents.url!
     }
 
-    /// SwifterSwift: Append query parameters to URL.
+    /// 添加query参数
     ///
     ///		var url = URL(string: "https://google.com")!
     ///		let param = ["q": "Swifter Swift"]
@@ -63,7 +63,7 @@ public extension URL {
         self = appendingQueryParameters(parameters)
     }
 
-    /// SwifterSwift: Get value of a query key.
+    /// 通过key获取query参数的值
     ///
     ///    var url = URL(string: "https://google.com?code=12345")!
     ///    queryValue(for: "code") -> "12345"
@@ -78,7 +78,7 @@ public extension URL {
         return nil
     }
 
-    /// SwifterSwift: Returns a new URL by removing all the path components.
+    /// 删除所有的path components返回新的URL
     ///
     ///     let url = URL(string: "https://domain.com/path/other")!
     ///     print(url.deletingAllPathComponents()) // prints "https://domain.com/"
@@ -92,7 +92,7 @@ public extension URL {
         return url
     }
 
-    /// SwifterSwift: Remove all the path components from the URL.
+    /// 删除所有的path components
     ///
     ///        var url = URL(string: "https://domain.com/path/other")!
     ///        url.deleteAllPathComponents()
@@ -103,7 +103,7 @@ public extension URL {
         }
     }
 
-    /// SwifterSwift: Generates new URL that does not have scheme.
+    /// 生成没有scheme的新URL。
     ///
     ///        let url = URL(string: "https://domain.com")!
     ///        print(url.droppedScheme()) // prints "domain.com"
@@ -125,7 +125,7 @@ public extension URL {
 public extension URL {
 
     #if os(iOS) || os(tvOS)
-    /// Generate a thumbnail image from given url. Returns nil if no thumbnail could be created. This function may take some time to complete. It's recommended to dispatch the call if the thumbnail is not generated from a local resource.
+    /// 获取视频某一刻的缩略图
     ///
     ///     var url = URL(string: "https://video.golem.de/files/1/1/20637/wrkw0718-sd.mp4")!
     ///     var thumbnail = url.thumbnail()

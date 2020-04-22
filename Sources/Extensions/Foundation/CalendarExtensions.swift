@@ -12,7 +12,7 @@ import Foundation
 // MARK: - Methods
 public extension Calendar {
 
-    /// SwifterSwift: Return the number of days in the month for a specified 'Date'.
+    /// 当前日期所在月份有多少天
     ///
     ///		let date = Date() // "Jan 12, 2017, 7:07 PM"
     ///		Calendar.current.numberOfDaysInMonth(for: date) -> 31

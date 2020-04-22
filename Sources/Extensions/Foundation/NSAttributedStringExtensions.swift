@@ -21,30 +21,30 @@ import Cocoa
 public extension NSAttributedString {
 
     #if os(iOS)
-    /// SwifterSwift: Bolded string.
+    /// 加粗
     public var bolded: NSAttributedString {
         return applying(attributes: [.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
     }
     #endif
 
-    /// SwifterSwift: Underlined string.
+    /// 下划线
     public var underlined: NSAttributedString {
         return applying(attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
     }
 
     #if os(iOS)
-    /// SwifterSwift: Italicized string.
+    /// 斜体
     public var italicized: NSAttributedString {
         return applying(attributes: [.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
     }
     #endif
 
-    /// SwifterSwift: Struckthrough string.
+    /// 删除线
     public var struckthrough: NSAttributedString {
         return applying(attributes: [.strikethroughStyle: NSNumber(value: NSUnderlineStyle.single.rawValue as Int)])
     }
 
-    /// SwifterSwift: Dictionary of the attributes applied across the whole string
+    /// 富文本属性的字典
     public var attributes: [NSAttributedString.Key: Any] {
         return attributes(at: 0, effectiveRange: nil)
     }
@@ -54,7 +54,7 @@ public extension NSAttributedString {
 // MARK: - Methods
 public extension NSAttributedString {
 
-    /// SwifterSwift: Applies given attributes to the new instance of NSAttributedString initialized with self object
+    /// 应用后的字符串
     ///
     /// - Parameter attributes: Dictionary of attributes
     /// - Returns: NSAttributedString with applied attributes
@@ -75,7 +75,7 @@ public extension NSAttributedString {
         return applying(attributes: [.foregroundColor: color])
     }
     #else
-    /// SwifterSwift: Add color to NSAttributedString.
+    /// 背景色
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString colored with given color.
@@ -84,7 +84,7 @@ public extension NSAttributedString {
     }
     #endif
 
-    /// SwifterSwift: Apply attributes to substrings matching a regular expression
+    /// 将属性应用于匹配正则表达式的子字符串
     ///
     /// - Parameters:
     ///   - attributes: Dictionary of attributes
@@ -103,7 +103,7 @@ public extension NSAttributedString {
         return result
     }
 
-    /// SwifterSwift: Apply attributes to occurrences of a given string
+    /// 对给定字符串的出现应用属性
     ///
     /// - Parameters:
     ///   - attributes: Dictionary of attributes
@@ -120,7 +120,7 @@ public extension NSAttributedString {
 // MARK: - Operators
 public extension NSAttributedString {
 
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
+    /// 富文本拼接
     ///
     /// - Parameters:
     ///   - lhs: NSAttributedString to add to.
@@ -131,7 +131,7 @@ public extension NSAttributedString {
         lhs = string
     }
 
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString and return a new NSAttributedString instance.
+    /// 富文本拼接
     ///
     /// - Parameters:
     ///   - lhs: NSAttributedString to add.
@@ -143,7 +143,7 @@ public extension NSAttributedString {
         return NSAttributedString(attributedString: string)
     }
 
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
+    /// 富文本拼接
     ///
     /// - Parameters:
     ///   - lhs: NSAttributedString to add to.
@@ -152,7 +152,7 @@ public extension NSAttributedString {
         lhs += NSAttributedString(string: rhs)
     }
 
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString and return a new NSAttributedString instance.
+    /// 富文本拼接
     ///
     /// - Parameters:
     ///   - lhs: NSAttributedString to add.

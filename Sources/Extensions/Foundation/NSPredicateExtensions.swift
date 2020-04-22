@@ -5,7 +5,7 @@
 //  Created by Max Härtwig on 04.10.17.
 //  Copyright © 2017 SwifterSwift
 //
-
+/// Cocoa框架中的NSPredicate用于查询，原理和用法都类似于SQL中的where，作用相当于数据库的过滤取
 #if canImport(Foundation)
 import Foundation
 

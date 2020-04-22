@@ -12,7 +12,7 @@ import Foundation
 // MARK: - Enums
 public extension Date {
 
-    /// SwifterSwift: Day name format.
+    /// 日的名字格式
     ///
     /// - threeLetters: 3 letter day abbreviation of day name.
     /// - oneLetter: 1 letter day abbreviation of day name.
@@ -28,7 +28,7 @@ public extension Date {
         case full
     }
 
-    /// SwifterSwift: Month name format.
+    /// 月的名字缩写
     ///
     /// - threeLetters: 3 letter month abbreviation of month name.
     /// - oneLetter: 1 letter month abbreviation of month name.
@@ -49,12 +49,12 @@ public extension Date {
 // MARK: - Properties
 public extension Date {
 
-    /// SwifterSwift: User’s current calendar.
+    /// 当前的日历
     public var calendar: Calendar {
         return Calendar.current
     }
 
-    /// SwifterSwift: Era.
+    /// 时代
     ///
     ///		Date().era -> 1
     ///
@@ -62,7 +62,7 @@ public extension Date {
         return Calendar.current.component(.era, from: self)
     }
 
-    /// SwifterSwift: Quarter.
+    /// 季度
     ///
     ///		Date().quarter -> 3 // date in third quarter of the year.
     ///
@@ -73,7 +73,7 @@ public extension Date {
         return Int(ceil(month/numberOfMonthsInQuarter))
     }
 
-    /// SwifterSwift: Week of year.
+    /// 一年的第几周
     ///
     ///		Date().weekOfYear -> 2 // second week in the year.
     ///
@@ -81,7 +81,7 @@ public extension Date {
         return Calendar.current.component(.weekOfYear, from: self)
     }
 
-    /// SwifterSwift: Week of month.
+    /// 月的第几周
     ///
     ///		Date().weekOfMonth -> 3 // date is in third week of the month.
     ///
@@ -89,7 +89,7 @@ public extension Date {
         return Calendar.current.component(.weekOfMonth, from: self)
     }
 
-    /// SwifterSwift: Year.
+    ///年
     ///
     ///		Date().year -> 2017
     ///
@@ -110,7 +110,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Month.
+    ///月
     ///
     /// 	Date().month -> 1
     ///
@@ -133,7 +133,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Day.
+    /// 日
     ///
     /// 	Date().day -> 12
     ///
@@ -156,7 +156,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Weekday.
+    /// 星期几
     ///
     /// 	Date().weekday -> 5 // fifth day in the current week.
     ///
@@ -164,7 +164,7 @@ public extension Date {
         return Calendar.current.component(.weekday, from: self)
     }
 
-    /// SwifterSwift: Hour.
+    /// 设置小时
     ///
     /// 	Date().hour -> 17 // 5 pm
     ///
@@ -187,7 +187,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Minutes.
+    /// 设置分钟
     ///
     /// 	Date().minute -> 39
     ///
@@ -210,7 +210,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Seconds.
+    /// 设置秒数
     ///
     /// 	Date().second -> 55
     ///
@@ -233,7 +233,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Nanoseconds.
+    /// 设置纳秒
     ///
     /// 	Date().nanosecond -> 981379985
     ///
@@ -257,7 +257,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Milliseconds.
+    /// 设置毫秒
     ///
     /// 	Date().millisecond -> 68
     ///
@@ -279,7 +279,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Check if date is in future.
+    /// 是否是未来时间
     ///
     /// 	Date(timeInterval: 100, since: Date()).isInFuture -> true
     ///
@@ -287,7 +287,7 @@ public extension Date {
         return self > Date()
     }
 
-    /// SwifterSwift: Check if date is in past.
+    /// 是否是过去时间
     ///
     /// 	Date(timeInterval: -100, since: Date()).isInPast -> true
     ///
@@ -295,7 +295,7 @@ public extension Date {
         return self < Date()
     }
 
-    /// SwifterSwift: Check if date is within today.
+    /// 是否是今日
     ///
     /// 	Date().isInToday -> true
     ///
@@ -303,7 +303,7 @@ public extension Date {
         return Calendar.current.isDateInToday(self)
     }
 
-    /// SwifterSwift: Check if date is within yesterday.
+    /// 是否是昨天
     ///
     /// 	Date().isInYesterday -> false
     ///
@@ -311,7 +311,7 @@ public extension Date {
         return Calendar.current.isDateInYesterday(self)
     }
 
-    /// SwifterSwift: Check if date is within tomorrow.
+    /// 是否在明天之内
     ///
     /// 	Date().isInTomorrow -> false
     ///
@@ -319,32 +319,32 @@ public extension Date {
         return Calendar.current.isDateInTomorrow(self)
     }
 
-    /// SwifterSwift: Check if date is within a weekend period.
+    /// 是否在周末期间.
     public var isInWeekend: Bool {
         return Calendar.current.isDateInWeekend(self)
     }
 
-    /// SwifterSwift: Check if date is within a weekday period.
+    /// 是否在工作日内。
     public var isWorkday: Bool {
         return !Calendar.current.isDateInWeekend(self)
     }
 
-    /// SwifterSwift: Check if date is within the current week.
+    /// 是否在本周内。
     public var isInCurrentWeek: Bool {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .weekOfYear)
     }
 
-    /// SwifterSwift: Check if date is within the current month.
+    /// 是否在当月。
     public var isInCurrentMonth: Bool {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .month)
     }
 
-    /// SwifterSwift: Check if date is within the current year.
+    /// 检查日期是否在当年之内。
     public var isInCurrentYear: Bool {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .year)
     }
 
-    /// SwifterSwift: ISO8601 string of format (yyyy-MM-dd'T'HH:mm:ss.SSS) from date.
+    /// ISO8601 时间  国际标准化组织的国际标准ISO 8601是日期和时间的表示方法
     ///
     /// 	Date().iso8601String -> "2017-01-12T14:51:29.574Z"
     ///
@@ -358,7 +358,7 @@ public extension Date {
         return dateFormatter.string(from: self).appending("Z")
     }
 
-    /// SwifterSwift: Nearest five minutes to date.
+    /// 最接近5分钟。
     ///
     /// 	var date = Date() // "5:54 PM"
     /// 	date.minute = 32 // "5:32 PM"
@@ -376,7 +376,7 @@ public extension Date {
         return Calendar.current.date(from: components)!
     }
 
-    /// SwifterSwift: Nearest ten minutes to date.
+    /// 最接近10分钟。
     ///
     /// 	var date = Date() // "5:57 PM"
     /// 	date.minute = 34 // "5:34 PM"
@@ -394,7 +394,7 @@ public extension Date {
         return Calendar.current.date(from: components)!
     }
 
-    /// SwifterSwift: Nearest quarter hour to date.
+    /// 最近的一刻钟。
     ///
     /// 	var date = Date() // "5:57 PM"
     /// 	date.minute = 34 // "5:34 PM"
@@ -412,7 +412,7 @@ public extension Date {
         return Calendar.current.date(from: components)!
     }
 
-    /// SwifterSwift: Nearest half hour to date.
+    /// 最接近半小时
     ///
     /// 	var date = Date() // "6:07 PM"
     /// 	date.minute = 41 // "6:41 PM"
@@ -430,7 +430,7 @@ public extension Date {
         return Calendar.current.date(from: components)!
     }
 
-    /// SwifterSwift: Nearest hour to date.
+    /// 最近的小时。
     ///
     /// 	var date = Date() // "6:17 PM"
     /// 	date.nearestHour // "6:00 PM"
@@ -449,7 +449,7 @@ public extension Date {
         return Calendar.current.date(byAdding: .hour, value: 1, to: date)!
     }
 
-    /// SwifterSwift: Time zone used currently by system.
+    /// 系统当前使用的时区。
     ///
     ///		Date().timeZone -> Europe/Istanbul (current)
     ///
@@ -457,7 +457,7 @@ public extension Date {
         return Calendar.current.timeZone
     }
 
-    /// SwifterSwift: Yesterday date.
+    /// 昨天的日期。
     ///
     ///     let date = Date() // "Oct 3, 2018, 10:57:11"
     ///     let yesterday = date.yesterday // "Oct 2, 2018, 10:57:11"
@@ -466,7 +466,7 @@ public extension Date {
         return addingTimeInterval(-86400.0)
     }
 
-    /// SwifterSwift: UNIX timestamp from date.
+    /// UNIX时间戳的日期。
     ///
     ///		Date().unixTimestamp -> 1484233862.826291
     ///
@@ -479,7 +479,7 @@ public extension Date {
 // MARK: - Methods
 public extension Date {
 
-    /// SwifterSwift: Date by adding multiples of calendar component.
+    /// 时间操作
     ///
     /// 	let date = Date() // "Jan 12, 2017, 7:07 PM"
     /// 	let date2 = date.adding(.minute, value: -10) // "Jan 12, 2017, 6:57 PM"
@@ -495,7 +495,7 @@ public extension Date {
         return Calendar.current.date(byAdding: component, value: value, to: self)!
     }
 
-    /// SwifterSwift: Add calendar component to date.
+    /// 时间操作
     ///
     /// 	var date = Date() // "Jan 12, 2017, 7:07 PM"
     /// 	date.add(.minute, value: -10) // "Jan 12, 2017, 6:57 PM"
@@ -514,10 +514,10 @@ public extension Date {
 
     // swiftlint:disable function_body_length, function_body_length
     // swiftlint:disable cyclomatic_complexity
-    /// SwifterSwift: Date by changing value of calendar component.
+    /// 改变时间
     ///
     /// 	let date = Date() // "Jan 12, 2017, 7:07 PM"
-    /// 	let date2 = date.changing(.minute, value: 10) // "Jan 12, 2017, 6:10 PM"
+    /// 	let date2 = date.changing(.minute, value: 10) // "Jan 12, 2017, 7:10 PM"
     /// 	let date3 = date.changing(.day, value: 4) // "Jan 4, 2017, 7:07 PM"
     /// 	let date4 = date.changing(.month, value: 2) // "Feb 12, 2017, 7:07 PM"
     /// 	let date5 = date.changing(.year, value: 2000) // "Jan 12, 2000, 7:07 PM"
@@ -582,7 +582,7 @@ public extension Date {
     }
     // swiftlint:enable cyclomatic_complexity, function_body_length
 
-    /// SwifterSwift: Data at the beginning of calendar component.
+    /// 重置时间到起始
     ///
     /// 	let date = Date() // "Jan 12, 2017, 7:14 PM"
     /// 	let date2 = date.beginning(of: .hour) // "Jan 12, 2017, 7:00 PM"
@@ -626,7 +626,7 @@ public extension Date {
     }
 
     // swiftlint:disable function_body_length
-    /// SwifterSwift: Date at the end of calendar component.
+    /// 重置时间到终止
     ///
     /// 	let date = Date() // "Jan 12, 2017, 7:27 PM"
     /// 	let date2 = date.end(of: .day) // "Jan 12, 2017, 11:59 PM"
@@ -691,7 +691,7 @@ public extension Date {
     }
     // swiftlint:enable function_body_length
 
-    /// SwifterSwift: Check if date is in current given calendar component.
+    /// 检查日期是否在当前给定的日历范围中。
     ///
     /// 	Date().isInCurrent(.day) -> true
     /// 	Date().isInCurrent(.year) -> true
@@ -702,7 +702,7 @@ public extension Date {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: component)
     }
 
-    /// SwifterSwift: Date string from date.
+    /// 日期字符串 指定format
     ///
     ///     Date().string(withFormat: "dd/MM/yyyy") -> "1/12/17"
     ///     Date().string(withFormat: "HH:mm") -> "23:50"
@@ -716,7 +716,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// SwifterSwift: Date string from date.
+    /// 日期字符串.指定style
     ///
     /// 	Date().dateString(ofStyle: .short) -> "1/12/17"
     /// 	Date().dateString(ofStyle: .medium) -> "Jan 12, 2017"
@@ -732,7 +732,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// SwifterSwift: Date and time string from date.
+    /// 日期时间字符串 指定style
     ///
     /// 	Date().dateTimeString(ofStyle: .short) -> "1/12/17, 7:32 PM"
     /// 	Date().dateTimeString(ofStyle: .medium) -> "Jan 12, 2017, 7:32:00 PM"
@@ -748,7 +748,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// SwifterSwift: Time string from date
+    /// 时间字符串 指定style
     ///
     /// 	Date().timeString(ofStyle: .short) -> "7:37 PM"
     /// 	Date().timeString(ofStyle: .medium) -> "7:37:02 PM"
@@ -764,7 +764,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// SwifterSwift: Day name from date.
+    /// 某天的名字，是否缩写
     ///
     /// 	Date().dayName(ofStyle: .oneLetter) -> "T"
     /// 	Date().dayName(ofStyle: .threeLetters) -> "Thu"
@@ -789,7 +789,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// SwifterSwift: Month name from date.
+    /// 某月的名字
     ///
     /// 	Date().monthName(ofStyle: .oneLetter) -> "J"
     /// 	Date().monthName(ofStyle: .threeLetters) -> "Jan"
@@ -814,7 +814,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// SwifterSwift: get number of seconds between two date
+    /// 两个日期之间的差值 单位秒
     ///
     /// - Parameter date: date to compate self to.
     /// - Returns: number of seconds between self and given date.
@@ -822,7 +822,7 @@ public extension Date {
         return timeIntervalSince(date)
     }
 
-    /// SwifterSwift: get number of minutes between two date
+    /// 两个日期之间的差值 单位分钟
     ///
     /// - Parameter date: date to compate self to.
     /// - Returns: number of minutes between self and given date.
@@ -830,7 +830,7 @@ public extension Date {
         return timeIntervalSince(date)/60
     }
 
-    /// SwifterSwift: get number of hours between two date
+    /// 两个日期之间的差值 单位小时
     ///
     /// - Parameter date: date to compate self to.
     /// - Returns: number of hours between self and given date.
@@ -838,7 +838,7 @@ public extension Date {
         return timeIntervalSince(date)/3600
     }
 
-    /// SwifterSwift: get number of days between two date
+    /// 两个日期之间的差值 单位天
     ///
     /// - Parameter date: date to compate self to.
     /// - Returns: number of days between self and given date.
@@ -846,7 +846,7 @@ public extension Date {
         return timeIntervalSince(date)/(3600*24)
     }
 
-    /// SwifterSwift: check if a date is between two other dates
+    ///监测日期是否在两个日期之内
     ///
     /// - Parameters:
     ///   - startDate: start date to compare self to.
@@ -860,7 +860,7 @@ public extension Date {
         return startDate.compare(self).rawValue * compare(endDate).rawValue > 0
     }
 
-    /// SwifterSwift: check if a date is a number of date components of another date
+    /// 检查一个日期是否是另一个日期的若干个日期组成部分
     ///
     /// - Parameters:
     ///   - value: number of times component is used in creating range
@@ -873,7 +873,7 @@ public extension Date {
         return abs(componentValue) <= value
     }
 
-    /// SwifterSwift: Returns a random date within the specified range.
+    /// 返回指定范围内的随机日期。
     ///
     /// - Parameter range: The range in which to create a random date. `range` must not be empty.
     /// - Returns: A random date within the bounds of `range`.
@@ -882,7 +882,7 @@ public extension Date {
             TimeInterval.random(in: range.lowerBound.timeIntervalSinceReferenceDate..<range.upperBound.timeIntervalSinceReferenceDate))
     }
 
-    /// SwifterSwift: Returns a random date within the specified range.
+    /// 返回指定范围内的随机日期。
     ///
     /// - Parameter range: The range in which to create a random date.
     /// - Returns: A random date within the bounds of `range`.
@@ -891,7 +891,7 @@ public extension Date {
             TimeInterval.random(in: range.lowerBound.timeIntervalSinceReferenceDate...range.upperBound.timeIntervalSinceReferenceDate))
     }
 
-    /// SwifterSwift: Returns a random date within the specified range, using the given generator as a source for randomness.
+    /// 使用给定生成器作为随机源，返回指定范围内的随机日期。
     ///
     /// - Parameters:
     ///   - range: The range in which to create a random date. `range` must not be empty.
@@ -903,7 +903,7 @@ public extension Date {
                                 using: &generator))
     }
 
-    /// SwifterSwift: Returns a random date within the specified range, using the given generator as a source for randomness.
+    /// 使用给定生成器作为随机源，返回指定范围内的随机日期.
     ///
     /// - Parameters:
     ///   - range: The range in which to create a random date.
@@ -920,7 +920,7 @@ public extension Date {
 // MARK: - Initializers
 public extension Date {
 
-    /// SwifterSwift: Create a new date form calendar components.
+    /// 根据calendar创建Date
     ///
     /// 	let date = Date(year: 2010, month: 1, day: 12) // "Jan 12, 2010, 7:45 PM"
     ///
@@ -966,7 +966,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Create date object from ISO8601 string.
+    /// 从  ISO8601 string创建日期
     ///
     /// 	let date = Date(iso8601String: "2017-01-12T16:48:00.959Z") // "Jan 12, 2017, 7:48 PM"
     ///
@@ -984,7 +984,7 @@ public extension Date {
         }
     }
 
-    /// SwifterSwift: Create new date object from UNIX timestamp.
+    /// 从 UNIX timestamp创建日期
     ///
     /// 	let date = Date(unixTimestamp: 1484239783.922743) // "Jan 12, 2017, 7:49 PM"
     ///
@@ -993,7 +993,7 @@ public extension Date {
         self.init(timeIntervalSince1970: unixTimestamp)
     }
 
-    /// SwifterSwift: Create date object from Int literal
+    /// 从 Int literal创建日期
     ///
     ///     let date = Date(integerLiteral: 2017_12_25) // "2017-12-25 00:00:00 +0000"
     /// - Parameter value: Int value, e.g. 20171225, or 2017_12_25 etc.
