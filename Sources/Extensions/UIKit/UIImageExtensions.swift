@@ -12,22 +12,22 @@ import UIKit
 // MARK: - Properties
 public extension UIImage {
 
-    /// SwifterSwift: Size in bytes of UIImage
+    /// 大小 b
     public var bytesSize: Int {
         return jpegData(compressionQuality: 1)?.count ?? 0
     }
 
-    /// SwifterSwift: Size in kilo bytes of UIImage
+    /// 大小 kb
     public var kilobytesSize: Int {
         return bytesSize / 1024
     }
 
-    /// SwifterSwift: UIImage with .alwaysOriginal rendering mode.
+    /// 原图
     public var original: UIImage {
         return withRenderingMode(.alwaysOriginal)
     }
 
-    /// SwifterSwift: UIImage with .alwaysTemplate rendering mode.
+    /// 始终将图像绘制为模板图像，忽略其颜色信息
     public var template: UIImage {
         return withRenderingMode(.alwaysTemplate)
     }
@@ -37,7 +37,7 @@ public extension UIImage {
 // MARK: - Methods
 public extension UIImage {
 
-    /// SwifterSwift: Compressed UIImage from original UIImage.
+    /// 压缩：从原始的UIImage压缩得到新的UIImage。
     ///
     /// - Parameter quality: The quality of the resulting JPEG image, expressed as a value from 0.0 to 1.0. The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality), (default is 0.5).
     /// - Returns: optional UIImage (if applicable).
@@ -46,7 +46,7 @@ public extension UIImage {
         return UIImage(data: data)
     }
 
-    /// SwifterSwift: Compressed UIImage data from original UIImage.
+    /// 压缩：从原始的UIImage压缩得到新的Data。
     ///
     /// - Parameter quality: The quality of the resulting JPEG image, expressed as a value from 0.0 to 1.0. The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality), (default is 0.5).
     /// - Returns: optional Data (if applicable).
@@ -54,7 +54,7 @@ public extension UIImage {
         return jpegData(compressionQuality: quality)
     }
 
-    /// SwifterSwift: UIImage Cropped to CGRect.
+    /// 裁剪
     ///
     /// - Parameter rect: CGRect to crop UIImage to.
     /// - Returns: cropped UIImage
@@ -64,7 +64,7 @@ public extension UIImage {
         return UIImage(cgImage: image)
     }
 
-    /// SwifterSwift: UIImage scaled to height with respect to aspect ratio.
+    /// 缩放到指定高度
     ///
     /// - Parameters:
     ///   - toHeight: new height.
@@ -80,7 +80,7 @@ public extension UIImage {
         return newImage
     }
 
-    /// SwifterSwift: UIImage scaled to width with respect to aspect ratio.
+    /// 缩放到指定宽度
     ///
     /// - Parameters:
     ///   - toWidth: new width.
@@ -96,7 +96,7 @@ public extension UIImage {
         return newImage
     }
 
-    /// SwifterSwift: Creates a copy of the receiver rotated by the given angle.
+    /// 图片旋转 角度 如：180°
     ///
     ///     // Rotate the image by 180°
     ///     image.rotated(by: Measurement(value: 180, unit: .degrees))
@@ -129,7 +129,7 @@ public extension UIImage {
         return newImage
     }
 
-    /// SwifterSwift: Creates a copy of the receiver rotated by the given angle (in radians).
+    /// 图片旋转 弧度 如：pi
     ///
     ///     // Rotate the image by 180°
     ///     image.rotated(by: .pi)
@@ -159,7 +159,7 @@ public extension UIImage {
         return newImage
     }
 
-    /// SwifterSwift: UIImage filled with color
+    /// 用颜色生成图片
     ///
     /// - Parameter color: color to fill image with.
     /// - Returns: UIImage filled with given color.
@@ -182,7 +182,7 @@ public extension UIImage {
         return newImage
     }
 
-    /// SwifterSwift: UIImage tinted with color
+    /// 用颜色生成图片，有颜色混合模式
     ///
     /// - Parameters:
     ///   - color: color to tint image with.
@@ -201,7 +201,7 @@ public extension UIImage {
         return tintedImage!
     }
 
-    /// SwifterSwift: UIImage with rounded corners
+    /// 切圆角用CPU
     ///
     /// - Parameters:
     ///   - radius: corner radius (optional), resulting image will be round if unspecified
@@ -231,7 +231,7 @@ public extension UIImage {
 // MARK: - Initializers
 public extension UIImage {
 
-    /// SwifterSwift: Create UIImage from color and size.
+    /// 用color便捷初始化
     ///
     /// - Parameters:
     ///   - color: image fill color.

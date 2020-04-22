@@ -12,12 +12,12 @@ import UIKit
 // MARK: - Properties
 public extension UICollectionView {
 
-    /// SwifterSwift: Index path of last item in collectionView.
+    /// 最后一个条目
     public var indexPathForLastItem: IndexPath? {
         return indexPathForLastItem(inSection: lastSection)
     }
 
-    /// SwifterSwift: Index of last section in collectionView.
+    /// 最后一组
     public var lastSection: Int {
         return numberOfSections > 0 ? numberOfSections - 1 : 0
     }
@@ -27,7 +27,7 @@ public extension UICollectionView {
 // MARK: - Methods
 public extension UICollectionView {
 
-    /// SwifterSwift: Number of all items in all sections of collectionView.
+    /// 条目总数量
     ///
     /// - Returns: The count of all rows in the collectionView.
     public func numberOfItems() -> Int {
@@ -40,7 +40,7 @@ public extension UICollectionView {
         return itemsCount
     }
 
-    /// SwifterSwift: IndexPath for last item in section.
+    /// 某组中最后一个
     ///
     /// - Parameter section: section to get last item in.
     /// - Returns: optional last indexPath for last item in section (if applicable).
@@ -57,7 +57,7 @@ public extension UICollectionView {
         return IndexPath(item: numberOfItems(inSection: section) - 1, section: section)
     }
 
-    /// SwifterSwift: Reload data with a completion handler.
+    /// 重新加载数据的完成的回调
     ///
     /// - Parameter completion: completion handler to run after reloadData finishes.
     public func reloadData(_ completion: @escaping () -> Void) {
@@ -68,7 +68,7 @@ public extension UICollectionView {
         })
     }
 
-    /// SwifterSwift: Dequeue reusable UICollectionViewCell using class name.
+    /// 类名重用cell
     ///
     /// - Parameters:
     ///   - name: UICollectionViewCell type.
@@ -81,7 +81,7 @@ public extension UICollectionView {
         return cell
     }
 
-    /// SwifterSwift: Dequeue reusable UICollectionReusableView using class name.
+    /// 类名重用UICollectionReusableView
     ///
     /// - Parameters:
     ///   - kind: the kind of supplementary view to retrieve. This value is defined by the layout object.
@@ -95,7 +95,7 @@ public extension UICollectionView {
         return cell
     }
 
-    /// SwifterSwift: Register UICollectionReusableView using class name.
+    /// 类名注册UICollectionReusableView
     ///
     /// - Parameters:
     ///   - kind: the kind of supplementary view to retrieve. This value is defined by the layout object.
@@ -104,7 +104,7 @@ public extension UICollectionView {
         register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UICollectionViewCell using class name.
+    /// nib和类名注册cell
     ///
     /// - Parameters:
     ///   - nib: Nib file used to create the collectionView cell.
@@ -113,14 +113,14 @@ public extension UICollectionView {
         register(nib, forCellWithReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UICollectionViewCell using class name.
+    ///  类名注册cell
     ///
     /// - Parameter name: UICollectionViewCell type.
     public func register<T: UICollectionViewCell>(cellWithClass name: T.Type) {
         register(T.self, forCellWithReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UICollectionReusableView using class name.
+    ///nib和类名注册UICollectionReusableView
     ///
     /// - Parameters:
     ///   - nib: Nib file used to create the reusable view.
@@ -130,8 +130,8 @@ public extension UICollectionView {
         register(nib, forSupplementaryViewOfKind: kind, withReuseIdentifier: String(describing: name))
     }
 
-    /// SwifterSwift: Register UICollectionViewCell with .xib file using only its corresponding class.
-    ///               Assumes that the .xib filename and cell class has the same name.
+    /// 使用.xib文件注册UICollectionViewCell，只使用它对应的类。
+    /// 假设.xib文件名和单元格类具有相同的名称。
     ///
     /// - Parameters:
     ///   - name: UICollectionViewCell type.

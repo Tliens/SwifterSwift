@@ -12,17 +12,17 @@ import UIKit
 // MARK: - Properties
 public extension UIFont {
 
-    /// SwifterSwift: Font as bold font
+    /// 粗体
     public var bold: UIFont {
         return UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitBold)!, size: 0)
     }
 
-    /// SwifterSwift: Font as italic font
+    /// 斜体
     public var italic: UIFont {
         return UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitItalic)!, size: 0)
     }
 
-    /// SwifterSwift: Font as monospaced font
+    /// 等宽
     ///
     ///     UIFont.preferredFont(forTextStyle: .body).monospaced
     ///

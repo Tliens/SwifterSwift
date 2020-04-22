@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Properties
 public extension UIButton {
 
-    /// SwifterSwift: Image of disabled state for button; also inspectable from Storyboard.
+    /// 失效状态下的图片
     @IBInspectable public var imageForDisabled: UIImage? {
         get {
             return image(for: .disabled)
@@ -22,7 +22,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Image of highlighted state for button; also inspectable from Storyboard.
+    /// 高亮状态下的图片
     @IBInspectable public var imageForHighlighted: UIImage? {
         get {
             return image(for: .highlighted)
@@ -32,7 +32,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Image of normal state for button; also inspectable from Storyboard.
+    /// 正常情况下的图片
     @IBInspectable public var imageForNormal: UIImage? {
         get {
             return image(for: .normal)
@@ -42,7 +42,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Image of selected state for button; also inspectable from Storyboard.
+    /// 选中状态下的图片
     @IBInspectable public var imageForSelected: UIImage? {
         get {
             return image(for: .selected)
@@ -52,7 +52,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title color of disabled state for button; also inspectable from Storyboard.
+    /// 失效状态下的文字颜色
     @IBInspectable public var titleColorForDisabled: UIColor? {
         get {
             return titleColor(for: .disabled)
@@ -62,7 +62,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title color of highlighted state for button; also inspectable from Storyboard.
+    /// 高亮状态下的文字颜色
     @IBInspectable public var titleColorForHighlighted: UIColor? {
         get {
             return titleColor(for: .highlighted)
@@ -72,7 +72,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title color of normal state for button; also inspectable from Storyboard.
+    /// 正常状态下的文字颜色
     @IBInspectable public var titleColorForNormal: UIColor? {
         get {
             return titleColor(for: .normal)
@@ -82,7 +82,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title color of selected state for button; also inspectable from Storyboard.
+    /// 选中状态下的文字颜色
     @IBInspectable public var titleColorForSelected: UIColor? {
         get {
             return titleColor(for: .selected)
@@ -92,7 +92,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title of disabled state for button; also inspectable from Storyboard.
+    /// 失效状态下的文字
     @IBInspectable public var titleForDisabled: String? {
         get {
             return title(for: .disabled)
@@ -102,7 +102,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title of highlighted state for button; also inspectable from Storyboard.
+    /// 高亮状态下的文字
     @IBInspectable public var titleForHighlighted: String? {
         get {
             return title(for: .highlighted)
@@ -112,7 +112,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title of normal state for button; also inspectable from Storyboard.
+    /// 正常情况下的文字
     @IBInspectable public var titleForNormal: String? {
         get {
             return title(for: .normal)
@@ -122,7 +122,7 @@ public extension UIButton {
         }
     }
 
-    /// SwifterSwift: Title of selected state for button; also inspectable from Storyboard.
+    /// 选中状态下的文字
     @IBInspectable public var titleForSelected: String? {
         get {
             return title(for: .selected)
@@ -141,28 +141,28 @@ public extension UIButton {
         return [.normal, .selected, .highlighted, .disabled]
     }
 
-    /// SwifterSwift: Set image for all states.
+    /// 设置所有状态下的图片
     ///
     /// - Parameter image: UIImage.
     public func setImageForAllStates(_ image: UIImage) {
         states.forEach { setImage(image, for: $0) }
     }
 
-    /// SwifterSwift: Set title color for all states.
+    /// 设置所有状态下的文字颜色
     ///
     /// - Parameter color: UIColor.
     public func setTitleColorForAllStates(_ color: UIColor) {
         states.forEach { setTitleColor(color, for: $0) }
     }
 
-    /// SwifterSwift: Set title for all states.
+    /// 设置所有状态下的文字
     ///
     /// - Parameter title: title string.
     public func setTitleForAllStates(_ title: String) {
         states.forEach { setTitle(title, for: $0) }
     }
 
-    /// SwifterSwift: Center align title text and image on UIButton
+    /// 在UIButton中将标题文本和图像居中对齐
     ///
     /// - Parameter spacing: spacing between UIButton title text and UIButton Image.
     public func centerTextAndImage(spacing: CGFloat) {

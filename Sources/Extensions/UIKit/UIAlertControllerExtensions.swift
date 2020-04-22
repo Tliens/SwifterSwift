@@ -16,7 +16,7 @@ import AudioToolbox
 // MARK: - Methodss
 public extension UIAlertController {
 
-    /// SwifterSwift: Present alert view controller in the current view controller.
+    /// 当前视图控制器弹出alert
     ///
     /// - Parameters:
     ///   - animated: set true to animate presentation of alert controller (default is true).
@@ -31,7 +31,7 @@ public extension UIAlertController {
         }
     }
 
-    /// SwifterSwift: Add an action to Alert
+    /// 添加点击事件
     ///
     /// - Parameters:
     ///   - title: action title
@@ -46,7 +46,7 @@ public extension UIAlertController {
         return action
     }
 
-    /// SwifterSwift: Add a text field to Alert
+    /// 添加 textField
     ///
     /// - Parameters:
     ///   - text: text field text (default is nil)
@@ -68,7 +68,7 @@ public extension UIAlertController {
 // MARK: - Initializers
 public extension UIAlertController {
 
-    /// SwifterSwift: Create new alert view controller with default OK action.
+    /// 默认带“OK”的弹窗
     ///
     /// - Parameters:
     ///   - title: alert controller's title.
@@ -84,7 +84,7 @@ public extension UIAlertController {
         }
     }
 
-    /// SwifterSwift: Create new error alert view controller from Error with default OK action.
+    /// 默认带“OK”和Error的的弹窗
     ///
     /// - Parameters:
     ///   - title: alert controller's title (default is "Error").

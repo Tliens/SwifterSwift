@@ -12,14 +12,14 @@ import UIKit
 // MARK: - Methods
 public extension UIStoryboard {
 
-    /// SwifterSwift: Get main storyboard for application
+    /// 获取应用程序的主故事板
     public static var main: UIStoryboard? {
         let bundle = Bundle.main
         guard let name = bundle.object(forInfoDictionaryKey: "UIMainStoryboardFile") as? String else { return nil }
         return UIStoryboard(name: name, bundle: bundle)
     }
 
-    /// SwifterSwift: Instantiate a UIViewController using its class name
+    /// 使用类名实例化UIViewController
     ///
     /// - Parameter name: UIViewController type
     /// - Returns: The view controller corresponding to specified class name

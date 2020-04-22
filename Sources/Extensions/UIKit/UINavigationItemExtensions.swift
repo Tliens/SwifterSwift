@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UINavigationItem {
 
-    /// SwifterSwift: Replace title label with an image in navigation item.
+    /// 用图片替换文字
     ///
     /// - Parameter image: UIImage to replace title with.
     public func replaceTitle(with image: UIImage) {

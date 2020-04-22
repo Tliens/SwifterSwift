@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UISlider {
 
-    /// SwifterSwift: Set slide bar value with completion handler.
+    /// 设置滑动条的值，可选择动画的形式
     ///
     /// - Parameters:
     ///   - value: slider value.

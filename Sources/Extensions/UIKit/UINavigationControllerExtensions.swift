@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UINavigationController {
 
-    /// SwifterSwift: Pop ViewController with completion handler.
+    /// pop 带有完成block。
     ///
     /// - Parameters:
     ///   - animated: Set this value to true to animate the transition (default is true).
@@ -25,7 +25,7 @@ public extension UINavigationController {
         CATransaction.commit()
     }
 
-    /// SwifterSwift: Push ViewController with completion handler.
+    /// push 带有完成block
     ///
     /// - Parameters:
     ///   - viewController: viewController to push.
@@ -38,7 +38,7 @@ public extension UINavigationController {
         CATransaction.commit()
     }
 
-    /// SwifterSwift: Make navigation controller's navigation bar transparent.
+    /// 使导航控制器的导航栏透明。
     ///
     /// - Parameter tint: tint color (default is .white).
     public func makeTransparent(withTint tint: UIColor = .white) {

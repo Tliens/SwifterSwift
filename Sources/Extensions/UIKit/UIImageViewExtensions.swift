@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UIImageView {
 
-    /// SwifterSwift: Set image from a URL.
+    /// 根据URL设置图片
     ///
     /// - Parameters:
     ///   - url: URL of image.
@@ -44,7 +44,7 @@ public extension UIImageView {
             }.resume()
     }
 
-    /// SwifterSwift: Make image view blurry
+    /// 模糊
     ///
     /// - Parameter style: UIBlurEffectStyle (default is .light).
     public func blur(withStyle style: UIBlurEffect.Style = .light) {
@@ -56,7 +56,7 @@ public extension UIImageView {
         clipsToBounds = true
     }
 
-    /// SwifterSwift: Blurred version of an image view
+    /// 模糊
     ///
     /// - Parameter style: UIBlurEffectStyle (default is .light).
     /// - Returns: blurred version of self.
