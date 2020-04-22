@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Methods
 public extension UITabBar {
 
-    /// SwifterSwift: Set tabBar colors.
+    /// 设置tabbar的颜色
     ///
     /// - Parameters:
     ///   - background: background color.
