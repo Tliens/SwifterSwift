@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Properties
 public extension UIViewController {
 
-    /// SwifterSwift: Check if ViewController is onscreen and not hidden.
+    /// 监测是否在屏幕上且没有隐藏
     public var isVisible: Bool {
         // http://stackoverflow.com/questions/2777438/how-to-tell-if-uiviewcontrollers-view-is-visible
         return isViewLoaded && view.window != nil
@@ -23,7 +23,7 @@ public extension UIViewController {
 // MARK: - Methods
 public extension UIViewController {
 
-    /// SwifterSwift: Assign as listener to notification.
+    /// 添加监听
     ///
     /// - Parameters:
     ///   - name: notification name.
@@ -32,19 +32,19 @@ public extension UIViewController {
         NotificationCenter.default.addObserver(self, selector: selector, name: name, object: nil)
     }
 
-    /// SwifterSwift: Unassign as listener to notification.
+    /// 移除监听某个通知
     ///
     /// - Parameter name: notification name.
     public func removeNotificationObserver(name: Notification.Name) {
         NotificationCenter.default.removeObserver(self, name: name, object: nil)
     }
 
-    /// SwifterSwift: Unassign as listener from all notifications.
+    /// 移除所有监听
     public func removeNotificationsObserver() {
         NotificationCenter.default.removeObserver(self)
     }
 
-    /// SwifterSwift: Helper method to display an alert on any UIViewController subclass. Uses UIAlertController to show an alert
+    /// 展示一个alert
     ///
     /// - Parameters:
     ///   - title: title of the alert
@@ -77,7 +77,7 @@ public extension UIViewController {
         return alertController
     }
 
-    /// SwifterSwift: Helper method to add a UIViewController as a childViewController.
+    /// 添加child view controller
     ///
     /// - Parameters:
     ///   - child: the view controller to add as a child
@@ -88,7 +88,7 @@ public extension UIViewController {
         child.didMove(toParent: self)
     }
 
-    /// SwifterSwift: Helper method to remove a UIViewController from its parent.
+    /// 移除child view controller
     public func removeViewAndControllerFromParentViewController() {
         guard parent != nil else { return }
 
