@@ -13,7 +13,7 @@ import Foundation
 // MARK: - Properties
 public extension Character {
 
-    /// SwifterSwift: Check if character is emoji.
+    /// 检查字符是否是emoji
     ///
     ///        Character("😀").isEmoji -> true
     ///
@@ -32,7 +32,7 @@ public extension Character {
         }
     }
 
-    /// SwifterSwift: Check if character is number.
+    /// 检查是否是数字.
     ///
     ///        Character("1").isNumber -> true
     ///        Character("a").isNumber -> false
@@ -41,7 +41,7 @@ public extension Character {
         return Int(String(self)) != nil
     }
 
-    /// SwifterSwift: Check if character is a letter.
+    /// 检查是否是字母
     ///
     ///        Character("4").isLetter -> false
     ///        Character("a").isLetter -> true
@@ -50,7 +50,7 @@ public extension Character {
         return String(self).rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
     }
 
-    /// SwifterSwift: Check if character is lowercased.
+    /// 检查字符是否为小写
     ///
     ///        Character("a").isLowercased -> true
     ///        Character("A").isLowercased -> false
@@ -59,7 +59,7 @@ public extension Character {
         return String(self) == String(self).lowercased()
     }
 
-    /// SwifterSwift: Check if character is uppercased.
+    /// 检查字符是否是大写
     ///
     ///        Character("a").isUppercased -> false
     ///        Character("A").isUppercased -> true
@@ -68,7 +68,7 @@ public extension Character {
         return String(self) == String(self).uppercased()
     }
 
-    /// SwifterSwift: Check if character is white space.
+    /// 检查字符是否为空
     ///
     ///        Character(" ").isWhiteSpace -> true
     ///        Character("A").isWhiteSpace -> false
@@ -77,7 +77,7 @@ public extension Character {
         return String(self) == " "
     }
 
-    /// SwifterSwift: Integer from character (if applicable).
+    /// 检查字符是否可以转Int
     ///
     ///        Character("1").int -> 1
     ///        Character("A").int -> nil
@@ -86,7 +86,7 @@ public extension Character {
         return Int(String(self))
     }
 
-    /// SwifterSwift: String from character.
+    /// 字符转字符串
     ///
     ///        Character("a").string -> "a"
     ///
@@ -94,7 +94,7 @@ public extension Character {
         return String(self)
     }
 
-    /// SwifterSwift: Return the character lowercased.
+    /// 转小写
     ///
     ///        Character("A").lowercased -> Character("a")
     ///
@@ -102,7 +102,7 @@ public extension Character {
         return String(self).lowercased().first!
     }
 
-    /// SwifterSwift: Return the character uppercased.
+    /// 转大写
     ///
     ///        Character("a").uppercased -> Character("A")
     ///
@@ -116,7 +116,7 @@ public extension Character {
 public extension Character {
 
     #if canImport(Foundation)
-    /// SwifterSwift: Random character.
+    /// 随机字符串
     ///
     ///    Character.random() -> k
     ///
@@ -131,7 +131,7 @@ public extension Character {
 // MARK: - Operators
 public extension Character {
 
-    /// SwifterSwift: Repeat character multiple times.
+    /// 字符串复制
     ///
     ///        Character("-") * 10 -> "----------"
     ///
@@ -144,7 +144,7 @@ public extension Character {
         return String(repeating: String(lhs), count: rhs)
     }
 
-    /// SwifterSwift: Repeat character multiple times.
+    ///字符串复制
     ///
     ///        10 * Character("-") -> "----------"
     ///

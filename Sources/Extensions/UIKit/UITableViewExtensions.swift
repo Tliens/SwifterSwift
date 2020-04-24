@@ -190,6 +190,13 @@ public extension UITableView {
         guard indexPath.row < numberOfRows(inSection: indexPath.section) else { return }
         scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
     }
-
+    //通过控件找到indexPath
+    public func findTableViewIndexPath(view:UIView)->IndexPath?{
+        let position: CGPoint = view.convert(.zero, to: self)
+        guard let indexPath = self.indexPathForRow(at: position) else{
+            return nil
+        }
+        return indexPath
+    }
 }
 #endif

@@ -13,7 +13,7 @@ import Foundation
 // MARK: - Methods
 public extension Collection {
 
-    /// SwifterSwift: Performs `each` closure for each element of collection in parallel.
+    /// 并行遍历
     ///
     ///        array.forEachInParallel { item in
     ///            print(item)
@@ -29,7 +29,7 @@ public extension Collection {
         }
     }
 
-    /// SwifterSwift: Safe protects the array from out of bounds by use of optional.
+    /// 保护数组不越界
     ///
     ///        let arr = [1, 2, 3, 4, 5]
     ///        arr[safe: 1] -> 2
@@ -45,7 +45,7 @@ public extension Collection {
 // MARK: - Methods (Int)
 public extension Collection where Index == Int {
 
-    /// SwifterSwift: Get the first index where condition is met.
+    /// 返回第一个满足条件的值的索引
     ///
     ///        [1, 7, 1, 2, 4, 1, 6].firstIndex { $0 % 2 == 0 } -> 3
     ///
@@ -58,7 +58,7 @@ public extension Collection where Index == Int {
         return nil
     }
 
-    /// SwifterSwift: Get the last index where condition is met.
+    /// 返回最后一个满足条件的值的索引
     ///
     ///     [1, 7, 1, 2, 4, 1, 8].lastIndex { $0 % 2 == 0 } -> 6
     ///
@@ -71,7 +71,7 @@ public extension Collection where Index == Int {
         return nil
     }
 
-    /// SwifterSwift: Get all indices where condition is met.
+    /// 返回所有满足条件的值的索引
     ///
     ///     [1, 7, 1, 2, 4, 1, 8].indices(where: { $0 == 1 }) -> [0, 2, 5]
     ///
@@ -85,7 +85,7 @@ public extension Collection where Index == Int {
         return indicies.isEmpty ? nil : indicies
     }
 
-    /// SwifterSwift: Calls the given closure with an array of size of the parameter slice.
+    /// 按照条件切割
     ///
     ///     [0, 2, 4, 7].forEach(slice: 2) { print($0) } -> //print: [0, 2], [4, 7]
     ///     [0, 2, 4, 7, 6].forEach(slice: 2) { print($0) } -> //print: [0, 2], [4, 7], [6]
@@ -103,7 +103,7 @@ public extension Collection where Index == Int {
         }
     }
 
-    /// SwifterSwift: Returns an array of slices of length "size" from the array. If array can't be split evenly, the final slice will be the remaining elements.
+    /// 按照条件组中组
     ///
     ///     [0, 2, 4, 7].group(by: 2) -> [[0, 2], [4, 7]]
     ///     [0, 2, 4, 7, 6].group(by: 2) -> [[0, 2], [4, 7], [6]]
@@ -126,7 +126,7 @@ public extension Collection where Index == Int {
 
 public extension Collection where Element: Equatable, Index == Int {
 
-    /// SwifterSwift: First index of a given item in an array.
+    /// 数组中查询到的第一个元素的索引.
     ///
     ///        [1, 2, 2, 3, 4, 2, 5].firstIndex(of: 2) -> 1
     ///        [1.2, 2.3, 4.5, 3.4, 4.5].firstIndex(of: 6.5) -> nil
@@ -141,7 +141,7 @@ public extension Collection where Element: Equatable, Index == Int {
         return nil
     }
 
-    /// SwifterSwift: Last index of element in array.
+    /// 数组中查询到的最后一个元素的索引.
     ///
     ///        [1, 2, 2, 3, 4, 2, 5].lastIndex(of: 2) -> 5
     ///        [1.2, 2.3, 4.5, 3.4, 4.5].lastIndex(of: 6.5) -> nil
@@ -161,7 +161,7 @@ public extension Collection where Element: Equatable, Index == Int {
 // MARK: - Methods (Integer)
 public extension Collection where Element == IntegerLiteralType, Index == Int {
 
-    /// SwifterSwift: Average of all elements in array.
+    /// 平均值
     ///
     /// - Returns: the average of the array's elements.
     public func average() -> Double {
@@ -174,7 +174,7 @@ public extension Collection where Element == IntegerLiteralType, Index == Int {
 // MARK: - Methods (FloatingPoint)
 public extension Collection where Element: FloatingPoint {
 
-    /// SwifterSwift: Average of all elements in array.
+    /// 平均值
     ///
     ///        [1.2, 2.3, 4.5, 3.4, 4.5].average() = 3.18
     ///

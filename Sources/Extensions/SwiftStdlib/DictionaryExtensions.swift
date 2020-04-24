@@ -13,7 +13,7 @@ import Foundation
 // MARK: - Methods
 public extension Dictionary {
 
-    /// SwifterSwift: Check if key exists in dictionary.
+    /// key是否存在在字典中
     ///
     ///        let dict: [String : Any] = ["testKey": "testValue", "testArrayKey": [1, 2, 3, 4, 5]]
     ///        dict.has(key: "testKey") -> true
@@ -25,7 +25,7 @@ public extension Dictionary {
         return index(forKey: key) != nil
     }
 
-    /// SwifterSwift: Remove all keys contained in the keys parameter from the dictionary.
+    /// 移除key对应的value
     ///
     ///        var dict : [String : String] = ["key1" : "value1", "key2" : "value2", "key3" : "value3"]
     ///        dict.removeAll(keys: ["key1", "key2"])
@@ -39,7 +39,7 @@ public extension Dictionary {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Remove a value for a random key from the dictionary.
+    /// 从字典中移除一个随意的key
     @discardableResult public mutating func removeValueForRandomKey() -> Value? {
         guard let randomKey = keys.randomElement() else { return nil }
         return removeValue(forKey: randomKey)
@@ -47,7 +47,7 @@ public extension Dictionary {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: JSON Data from dictionary.
+    /// 字典转Data
     ///
     /// - Parameter prettify: set true to prettify data (default is false).
     /// - Returns: optional JSON Data (if applicable).
@@ -61,7 +61,7 @@ public extension Dictionary {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: JSON String from dictionary.
+    /// 字典转json
     ///
     ///        dict.jsonString() -> "{"testKey":"testValue","testArrayKey":[1,2,3,4,5]}"
     ///
@@ -92,14 +92,14 @@ public extension Dictionary {
     }
     #endif
 
-    /// SwifterSwift: Returns a dictionary containing the results of mapping the given closure over the sequence’s elements.
+    /// 返回一个字典，其中包含将给定闭包映射到序列元素上的结果。？？？
     /// - Parameter transform: A mapping closure. `transform` accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type.
     /// - Returns: A dictionary containing the transformed elements of this sequence.
     public func mapKeysAndValues<K, V>(_ transform: ((key: Key, value: Value)) throws -> (K, V)) rethrows -> [K: V] {
         return [K: V](uniqueKeysWithValues: try map(transform))
     }
 
-    /// SwifterSwift: Returns a dictionary containing the non-`nil` results of calling the given transformation with each element of this sequence.
+    /// 返回一个字典，其中包含调用该序列中每个元素的给定转换的非' nil '结果。
     /// - Parameter transform: A closure that accepts an element of this sequence as its argument and returns an optional value.
     /// - Returns: A dictionary of the non-`nil` results of calling `transform` with each element of the sequence.
     /// - Complexity: *O(m + n)*, where _m_ is the length of this sequence and _n_ is the length of the result.
@@ -112,7 +112,7 @@ public extension Dictionary {
 // MARK: - Methods (Value: Equatable)
 public extension Dictionary where Value: Equatable {
 
-    /// SwifterSwift: Returns an array of all keys that have the given value in dictionary.
+    /// 返回字典中具有给定值的所有key的数组。
     ///
     ///        let dict = ["key1": "value1", "key2": "value1", "key3": "value2"]
     ///        dict.keys(forValue: "value1") -> ["key1", "key2"]
@@ -130,7 +130,7 @@ public extension Dictionary where Value: Equatable {
 // MARK: - Methods (ExpressibleByStringLiteral)
 public extension Dictionary where Key: StringProtocol {
 
-    /// SwifterSwift: Lowercase all keys in dictionary.
+    /// key转小写
     ///
     ///        var dict = ["tEstKeY": "value"]
     ///        dict.lowercaseAllKeys()
@@ -149,7 +149,7 @@ public extension Dictionary where Key: StringProtocol {
 // MARK: - Subscripts
 public extension Dictionary {
 
-    /// SwifterSwift: Deep fetch or set a value from nested dictionaries.
+    /// SwifterSwift: 从嵌套字典中深度获取或设置一个值。
     ///
     ///        var dict =  ["key": ["key1": ["key2": "value"]]]
     ///        dict[path: ["key", "key1", "key2"]] = "newValue"
@@ -192,7 +192,7 @@ public extension Dictionary {
 // MARK: - Operators
 public extension Dictionary {
 
-    /// SwifterSwift: Merge the keys/values of two dictionaries.
+    /// 字典合并
     ///
     ///        let dict : [String : String] = ["key1" : "value1"]
     ///        let dict2 : [String : String] = ["key2" : "value2"]
@@ -212,7 +212,7 @@ public extension Dictionary {
 
     // MARK: - Operators
 
-    /// SwifterSwift: Append the keys and values from the second dictionary into the first one.
+    /// 字典合并
     ///
     ///        var dict : [String : String] = ["key1" : "value1"]
     ///        let dict2 : [String : String] = ["key2" : "value2"]
@@ -227,7 +227,7 @@ public extension Dictionary {
         rhs.forEach { lhs[$0] = $1}
     }
 
-    /// SwifterSwift: Remove keys contained in the sequence from the dictionary
+    /// 字典合并
     ///
     ///        let dict : [String : String] = ["key1" : "value1", "key2" : "value2", "key3" : "value3"]
     ///        let result = dict-["key1", "key2"]
@@ -245,7 +245,7 @@ public extension Dictionary {
         return result
     }
 
-    /// SwifterSwift: Remove keys contained in the sequence from the dictionary
+    /// 字典合并
     ///
     ///        var dict : [String : String] = ["key1" : "value1", "key2" : "value2", "key3" : "value3"]
     ///        dict-=["key1", "key2"]

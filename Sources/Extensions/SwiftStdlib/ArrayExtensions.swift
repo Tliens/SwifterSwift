@@ -12,7 +12,7 @@ import Foundation
 // MARK: - Methods
 public extension Array {
 
-    /// SwifterSwift: Insert an element at the beginning of array.
+    /// 添加到最前面
     ///
     ///        [2, 3, 4, 5].prepend(1) -> [1, 2, 3, 4, 5]
     ///        ["e", "l", "l", "o"].prepend("h") -> ["h", "e", "l", "l", "o"]
@@ -22,7 +22,7 @@ public extension Array {
         insert(newElement, at: 0)
     }
 
-    /// SwifterSwift: Safely Swap values at index positions.
+    /// 交换两个值
     ///
     ///        [1, 2, 3, 4, 5].safeSwap(from: 3, to: 0) -> [4, 2, 3, 1, 5]
     ///        ["h", "e", "l", "l", "o"].safeSwap(from: 1, to: 0) -> ["e", "h", "l", "l", "o"]
@@ -37,7 +37,7 @@ public extension Array {
         swapAt(index, otherIndex)
     }
 
-    /// SwifterSwift: Keep elements of Array while condition is true.
+    /// 筛选 根据条件筛选
     ///
     ///        [0, 2, 4, 7].keep( where: {$0 % 2 == 0}) -> [0, 2, 4]
     ///
@@ -53,7 +53,7 @@ public extension Array {
         return self
     }
 
-    /// SwifterSwift: Take element of Array while condition is true.
+    /// 筛选 所有元素直到条件计算为false。
     ///
     ///        [0, 2, 4, 7, 6, 8].take( where: {$0 % 2 == 0}) -> [0, 2, 4]
     ///
@@ -66,7 +66,7 @@ public extension Array {
         return self
     }
 
-    /// SwifterSwift: Skip elements of Array while condition is true.
+    /// 筛选 当条件为真时，跳过数组中的元素。
     ///
     ///        [0, 2, 4, 7, 6, 8].skip( where: {$0 % 2 == 0}) -> [6, 8]
     ///
@@ -79,7 +79,7 @@ public extension Array {
         return [Element]()
     }
 
-    /// SwifterSwift: Separates an array into 2 arrays based on a predicate.
+    /// 根据条件将一个数组分成两个数组。
     ///
     ///     [0, 1, 2, 3, 4, 5].divided { $0 % 2 == 0 } -> ( [0, 2, 4], [1, 3, 5] )
     ///
@@ -95,7 +95,7 @@ public extension Array {
         return (matching, nonMatching)
     }
 
-    /// SwifterSwift: Returns a sorted array based on an optional keypath.
+    /// 返回一个基于可选keypath的有序数组
     ///
     /// - Parameter path: Key path to sort. The key path type must be Comparable.
     /// - Parameter ascending: If order must be ascending.
@@ -107,7 +107,7 @@ public extension Array {
         })
     }
 
-    /// SwifterSwift: Returns a sorted array based on a keypath.
+    /// 返回一个基于keypath的有序数组
     ///
     /// - Parameter path: Key path to sort. The key path type must be Comparable.
     /// - Parameter ascending: If order must be ascending.
@@ -118,7 +118,7 @@ public extension Array {
         })
     }
 
-    /// SwifterSwift: Sort the array based on an optional keypath.
+    /// 返回一个基于可选keypath的有序数组，同时改变自身
     ///
     /// - Parameters:
     ///   - path: Key path to sort, must be Comparable.
@@ -130,7 +130,7 @@ public extension Array {
         return self
     }
 
-    /// SwifterSwift: Sort the array based on a keypath.
+    /// 返回一个基于keypath的有序数组 同时改变自身
     ///
     /// - Parameters:
     ///   - path: Key path to sort, must be Comparable.
@@ -147,7 +147,7 @@ public extension Array {
 // MARK: - Methods (Equatable)
 public extension Array where Element: Equatable {
 
-    /// SwifterSwift: Remove all instances of an item from array.
+    /// 移除array的所有内容
     ///
     ///        [1, 2, 2, 3, 4, 5].removeAll(2) -> [1, 3, 4, 5]
     ///        ["h", "e", "l", "l", "o"].removeAll("l") -> ["h", "e", "o"]
@@ -160,7 +160,7 @@ public extension Array where Element: Equatable {
         return self
     }
 
-    /// SwifterSwift: Remove all instances contained in items parameter from array.
+    /// 数组中移除数组
     ///
     ///        [1, 2, 2, 3, 4, 5].removeAll([2,5]) -> [1, 3, 4]
     ///        ["h", "e", "l", "l", "o"].removeAll(["l", "h"]) -> ["e", "o"]
@@ -174,7 +174,7 @@ public extension Array where Element: Equatable {
         return self
     }
 
-    /// SwifterSwift: Remove all duplicate elements from Array.
+    /// 移除重复元素
     ///
     ///        [1, 2, 2, 3, 4, 5].removeDuplicates() -> [1, 2, 3, 4, 5]
     ///        ["h", "e", "l", "l", "o"]. removeDuplicates() -> ["h", "e", "l", "o"]
@@ -188,7 +188,7 @@ public extension Array where Element: Equatable {
         }
     }
 
-    /// SwifterSwift: Return array with all duplicate elements removed.
+    /// 返回一个去重的数组
     ///
     ///     [1, 1, 2, 2, 3, 3, 3, 4, 5].withoutDuplicates() -> [1, 2, 3, 4, 5])
     ///     ["h", "e", "l", "l", "o"].withoutDuplicates() -> ["h", "e", "l", "o"])

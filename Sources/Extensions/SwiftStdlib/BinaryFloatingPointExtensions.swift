@@ -8,7 +8,7 @@
 
 // MARK: - Methods
 public extension BinaryFloatingPoint {
-
+    /// 浮点数处理，四舍五入，位数等
     /// SwifterSwift: Returns a rounded value with the specified number of
     /// decimal places and rounding rule. If `numberOfDecimalPlaces` is negative,
     /// `0` will be used.

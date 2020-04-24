@@ -9,7 +9,7 @@
 // MARK: - Methods
 public extension Comparable {
 
-    /// SwifterSwift: Returns true if value is in the provided range.
+    /// 判断值是否在给定范围内
     ///
     ///    1.isBetween(5...7) // false
     ///    7.isBetween(6...12) // true
@@ -25,7 +25,7 @@ public extension Comparable {
         return range ~= self
     }
 
-    /// SwifterSwift: Returns value limited within the provided range.
+    /// 返回指定范围内与本身最接近的值，。
     ///
     ///     1.clamped(to: 3...8) // 3
     ///     4.clamped(to: 3...7) // 4

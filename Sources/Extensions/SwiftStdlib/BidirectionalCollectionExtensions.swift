@@ -9,9 +9,7 @@
 // MARK: - Methods
 public extension BidirectionalCollection {
 
-    /// SwifterSwift: Returns the element at the specified position. If offset
-    /// is negative, the `n`th element from the end will be returned where `n`
-    /// is the result of `abs(distance)`.
+    /// 返回指定位置的元素。如果偏移量为负，则返回末端的' n '元素，其中' n '是' abs(distance) '的结果.
     ///
     ///        let arr = [1, 2, 3, 4, 5]
     ///        arr[offset: 1] -> 2

@@ -75,7 +75,7 @@ public extension NSAttributedString {
         return applying(attributes: [.foregroundColor: color])
     }
     #else
-    /// 背景色
+    /// 文字颜色
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString colored with given color.
@@ -83,7 +83,13 @@ public extension NSAttributedString {
         return applying(attributes: [.foregroundColor: color])
     }
     #endif
+    /// 背景色
+    public func backgroundColored(with color: UIColor) -> NSAttributedString {
+        return applying(attributes: [.backgroundColor: color])
+    }
+    /// 背景色
 
+    
     /// 将属性应用于匹配正则表达式的子字符串
     ///
     /// - Parameters:
