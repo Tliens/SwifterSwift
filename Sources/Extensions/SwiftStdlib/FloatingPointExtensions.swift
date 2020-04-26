@@ -13,41 +13,41 @@ import Foundation
 // MARK: - Properties
 public extension FloatingPoint {
 
-    /// SwifterSwift: Absolute value of number.
+    /// 绝对值
     public var abs: Self {
         return Swift.abs(self)
     }
 
-    /// SwifterSwift: Check if number is positive.
+    /// 是否为正数
     public var isPositive: Bool {
         return self > 0
     }
 
-    /// SwifterSwift: Check if number is negative.
+    /// 是否为负数
     public var isNegative: Bool {
         return self < 0
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Ceil of number.
+    /// 向上取整
     public var ceil: Self {
         return Foundation.ceil(self)
     }
     #endif
 
-    /// SwifterSwift: Radian value of degree input.
+    /// 度数转 弧度
     public var degreesToRadians: Self {
         return Self.pi * self / Self(180)
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Floor of number.
+    /// 向下取整
     public var floor: Self {
         return Foundation.floor(self)
     }
     #endif
 
-    /// SwifterSwift: Degree value of radian input.
+    /// 角度转弧度
     public var radiansToDegrees: Self {
         return self * Self(180) / Self.pi
     }
@@ -58,7 +58,7 @@ public extension FloatingPoint {
 
 // swiftlint:disable next identifier_name
 infix operator ±
-/// SwifterSwift: Tuple of plus-minus operation.
+/// 误差范围 自身为原点
 ///
 /// - Parameters:
 ///   - lhs: number
@@ -71,7 +71,7 @@ public func ±<T: FloatingPoint> (lhs: T, rhs: T) -> (T, T) {
 
 // swiftlint:disable next identifier_name
 prefix operator ±
-/// SwifterSwift: Tuple of plus-minus operation.
+/// 误差范围 0为原点
 ///
 /// - Parameter int: number
 /// - Returns: tuple of plus-minus operation (± 2.5 -> (2.5, -2.5)).

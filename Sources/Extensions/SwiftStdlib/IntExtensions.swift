@@ -13,44 +13,44 @@ import CoreGraphics
 // MARK: - Properties
 public extension Int {
 
-    /// SwifterSwift: CountableRange 0..<Int.
+    /// 0..<self 的范围
     public var countableRange: CountableRange<Int> {
         return 0..<self
     }
 
-    /// SwifterSwift: Radian value of degree input.
+    /// 弧度转角度
     public var degreesToRadians: Double {
         return Double.pi * Double(self) / 180.0
     }
 
-    /// SwifterSwift: Degree value of radian input
+    /// 角度转弧度
     public var radiansToDegrees: Double {
         return Double(self) * 180 / Double.pi
     }
 
-    /// SwifterSwift: UInt.
+    /// 转UInt
     public var uInt: UInt {
         return UInt(self)
     }
 
-    /// SwifterSwift: Double.
+    /// 转double
     public var double: Double {
         return Double(self)
     }
 
-    /// SwifterSwift: Float.
+    /// 转float
     public var float: Float {
         return Float(self)
     }
 
     #if canImport(CoreGraphics)
-    /// SwifterSwift: CGFloat.
+    /// 转CGFloat
     public var cgFloat: CGFloat {
         return CGFloat(self)
     }
     #endif
 
-    /// SwifterSwift: String formatted for values over ±1000 (example: 1k, -2k, 100k, 1kk, -5kk..)
+    /// 以千为单位 比如 1022 ->10k
     public var kFormatted: String {
         var sign: String {
             return self >= 0 ? "" : "-"
@@ -66,7 +66,7 @@ public extension Int {
         return String(format: "\(sign)%ikk", abs / 100000)
     }
 
-    /// SwifterSwift: Array of digits of integer value.
+    /// 整数转数字 如：103 -> [1,0,3]
     public var digits: [Int] {
         guard self != 0 else { return [0] }
         var digits = [Int]()
@@ -82,7 +82,7 @@ public extension Int {
         return digits
     }
 
-    /// SwifterSwift: Number of digits of integer value.
+    /// 有几位数字 如1000 一共是4位
     public var digitsCount: Int {
         guard self != 0 else { return 1 }
         let number = Double(abs)
@@ -94,7 +94,7 @@ public extension Int {
 // MARK: - Methods
 public extension Int {
 
-    /// SwifterSwift: check if given integer prime or not.
+    /// 是否为素数。
     /// Warning: Using big numbers can be computationally expensive!
     /// - Returns: true or false depending on prime-ness
     public func isPrime() -> Bool {
@@ -117,7 +117,7 @@ public extension Int {
         return true
     }
 
-    /// SwifterSwift: Roman numeral string from integer (if applicable).
+    /// 转罗马数字
     ///
     ///10.romanNumeral() -> "X"
     ///
@@ -147,7 +147,7 @@ public extension Int {
     }
 
     // swiftlint:disable next identifier_name
-    /// SwifterSwift: Rounds to the closest multiple of n
+    /// 四舍五入到最接近的n的倍数
     public func roundToNearest(_ n: Int) -> Int {
         return n == 0 ? self : Int(round(Double(self) / Double(n))) * n
     }
@@ -158,7 +158,7 @@ public extension Int {
 
 precedencegroup PowerPrecedence { higherThan: MultiplicationPrecedence }
 infix operator ** : PowerPrecedence
-/// SwifterSwift: Value of exponentiation.
+/// 指数函数
 ///
 /// - Parameters:
 ///   - lhs: base integer.
@@ -171,7 +171,7 @@ public func ** (lhs: Int, rhs: Int) -> Double {
 
 // swiftlint:disable next identifier_name
 prefix operator √
-/// SwifterSwift: Square root of integer.
+/// 平方根
 ///
 /// - Parameter int: integer value to find square root for
 /// - Returns: square root of given integer.
@@ -182,7 +182,7 @@ public prefix func √ (int: Int) -> Double {
 
 // swiftlint:disable next identifier_name
 infix operator ±
-/// SwifterSwift: Tuple of plus-minus operation.
+/// 误差范围 自身为原点
 ///
 /// - Parameters:
 ///   - lhs: integer number.
@@ -195,7 +195,7 @@ public func ± (lhs: Int, rhs: Int) -> (Int, Int) {
 
 // swiftlint:disable next identifier_name
 prefix operator ±
-/// SwifterSwift: Tuple of plus-minus operation.
+/// 误差范围，0为原点
 ///
 /// - Parameter int: integer number
 /// - Returns: tuple of plus-minus operation (example: ± 2 -> (2, -2)).

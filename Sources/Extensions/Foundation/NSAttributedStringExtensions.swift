@@ -87,9 +87,11 @@ public extension NSAttributedString {
     public func backgroundColored(with color: UIColor) -> NSAttributedString {
         return applying(attributes: [.backgroundColor: color])
     }
-    /// 背景色
+    /// 文字间距
+    func spaceText(space:Double) -> NSAttributedString{
+        return applying(attributes: [.kern: space])
+    }
 
-    
     /// 将属性应用于匹配正则表达式的子字符串
     ///
     /// - Parameters:

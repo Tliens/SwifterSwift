@@ -13,18 +13,18 @@ import CoreGraphics
 // MARK: - Properties
 public extension Float {
 
-    /// SwifterSwift: Int.
+    /// 转int
     public var int: Int {
         return Int(self)
     }
 
-    /// SwifterSwift: Double.
+    /// 转double
     public var double: Double {
         return Double(self)
     }
 
     #if canImport(CoreGraphics)
-    /// SwifterSwift: CGFloat.
+    /// 转CGFloat
     public var cgFloat: CGFloat {
         return CGFloat(self)
     }
@@ -36,7 +36,7 @@ public extension Float {
 
 precedencegroup PowerPrecedence { higherThan: MultiplicationPrecedence }
 infix operator ** : PowerPrecedence
-/// SwifterSwift: Value of exponentiation.
+/// 指数函数
 ///
 /// - Parameters:
 ///   - lhs: base float.
@@ -49,7 +49,7 @@ public func ** (lhs: Float, rhs: Float) -> Float {
 
 // swiftlint:disable next identifier_name
 prefix operator √
-/// SwifterSwift: Square root of float.
+///  平方根
 ///
 /// - Parameter float: float value to find square root for
 /// - Returns: square root of given float.
