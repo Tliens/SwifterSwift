@@ -26,7 +26,7 @@ import CoreGraphics
 public extension String {
 
     #if canImport(Foundation)
-    /// SwifterSwift: String decoded from base64 (if applicable).
+    /// base64Decoded
     ///
     ///		"SGVsbG8gV29ybGQh".base64Decoded = Optional("Hello World!")
     ///
@@ -38,7 +38,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: String encoded in base64 (if applicable).
+    /// base64Encoded
     ///
     ///		"Hello World!".base64Encoded -> Optional("SGVsbG8gV29ybGQh")
     ///
@@ -49,13 +49,13 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Array of characters of a string.
+    /// 转字符串数组
     public var charactersArray: [Character] {
         return Array(self)
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: CamelCase of string.
+    /// 字符串标准驼峰
     ///
     ///		"sOme vAriable naMe".camelCased -> "someVariableName"
     ///
@@ -73,7 +73,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Check if string contains one or more emojis.
+    /// 是否包含emoji
     ///
     ///		"Hello 😀".containEmoji -> true
     ///
@@ -94,7 +94,7 @@ public extension String {
         return false
     }
 
-    /// SwifterSwift: First character of string (if applicable).
+    /// 第一个字符
     ///
     ///		"Hello".firstCharacterAsString -> Optional("H")
     ///		"".firstCharacterAsString -> nil
@@ -105,7 +105,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string contains one or more letters.
+    /// 是否有字符
     ///
     ///		"123abc".hasLetters -> true
     ///		"123".hasLetters -> false
@@ -116,7 +116,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string contains one or more numbers.
+    /// 是否有数字
     ///
     ///		"abcd".hasNumbers -> false
     ///		"123abc".hasNumbers -> true
@@ -127,7 +127,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string contains only letters.
+    /// 是否是字母
     ///
     ///		"abc".isAlphabetic -> true
     ///		"123abc".isAlphabetic -> false
@@ -140,7 +140,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string contains at least one letter and one number.
+    /// 是否是字母和数字
     ///
     ///		// useful for passwords
     ///		"123abc".isAlphaNumeric -> true
@@ -155,7 +155,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is valid email format.
+    /// 是否为有效的邮箱
     ///
     /// - Note: Note that this property does not validate the email address against an email server. It merely attempts to determine whether its format is suitable for an email address.
     ///
@@ -169,7 +169,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid URL.
+    /// 是否是有效的URL
     ///
     ///		"https://google.com".isValidUrl -> true
     ///
@@ -179,7 +179,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid schemed URL.
+    /// 是否为有效的 schemed URL.
     ///
     ///		"https://google.com".isValidSchemedUrl -> true
     ///		"google.com".isValidSchemedUrl -> false
@@ -191,7 +191,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid https URL.
+    /// 是否是https
     ///
     ///		"https://google.com".isValidHttpsUrl -> true
     ///
@@ -202,7 +202,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid http URL.
+    /// 是否是http
     ///
     ///		"http://google.com".isValidHttpUrl -> true
     ///
@@ -213,7 +213,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid file URL.
+    /// 是否是有效的本地文件路径
     ///
     ///		"file://Documents/file.txt".isValidFileUrl -> true
     ///
@@ -223,7 +223,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string is a valid Swift number.
+    /// 是否是数字
     ///
     /// Note:
     /// In North America, "." is the decimal separator,
@@ -242,7 +242,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string only contains digits.
+    ///是否仅包含数字
     ///
     ///     "123".isDigits -> true
     ///     "1.3".isDigits -> false
@@ -253,7 +253,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Last character of string (if applicable).
+    /// 最后一个字符
     ///
     ///		"Hello".lastCharacterAsString -> Optional("o")
     ///		"".lastCharacterAsString -> nil
@@ -264,7 +264,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Latinized string.
+    /// 拉丁字母转换.
     ///
     ///		"Hèllö Wórld!".latinized -> "Hello World!"
     ///
@@ -274,7 +274,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Bool value from string (if applicable).
+    /// 是否可转换为有效的布尔值
     ///
     ///		"1".bool -> true
     ///		"False".bool -> false
@@ -294,7 +294,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Date object from "yyyy-MM-dd" formatted string.
+    /// 字符串转时间 yyyy-MM-dd
     ///
     ///		"2007-06-29".date -> Optional(Date)
     ///
@@ -308,7 +308,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Date object from "yyyy-MM-dd HH:mm:ss" formatted string.
+    /// 字符串转时间 yyyy-MM-dd HH:mm:ss
     ///
     ///		"2007-06-29 14:23:09".dateTime -> Optional(Date)
     ///
@@ -321,7 +321,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Integer value from string (if applicable).
+    /// 转Int
     ///
     ///		"101".int -> 101
     ///

@@ -12,7 +12,7 @@ import Foundation
 
 public extension Sequence {
 
-    /// SwifterSwift: Check if all elements in collection match a conditon.
+    /// 是否所以的都满足条件
     ///
     ///        [2, 2, 4].all(matching: {$0 % 2 == 0}) -> true
     ///        [1,2, 2, 4].all(matching: {$0 % 2 == 0}) -> false
@@ -23,7 +23,7 @@ public extension Sequence {
         return try !contains { try !condition($0) }
     }
 
-    /// SwifterSwift: Check if no elements in collection match a conditon.
+    /// 是否没有匹配的
     ///
     ///        [2, 2, 4].none(matching: {$0 % 2 == 0}) -> false
     ///        [1, 3, 5, 7].none(matching: {$0 % 2 == 0}) -> true
@@ -45,7 +45,7 @@ public extension Sequence {
         return try contains { try condition($0) }
     }
 
-    /// SwifterSwift: Get last element that satisfies a conditon.
+    /// 最后一个满足的
     ///
     ///        [2, 2, 4, 7].last(where: {$0 % 2 == 0}) -> 4
     ///
@@ -58,7 +58,7 @@ public extension Sequence {
         return nil
     }
 
-    /// SwifterSwift: Filter elements based on a rejection condition.
+    /// 哪个不满足条件
     ///
     ///        [2, 2, 4, 7].reject(where: {$0 % 2 == 0}) -> [7]
     ///
@@ -68,7 +68,7 @@ public extension Sequence {
         return try filter { return try !condition($0) }
     }
 
-    /// SwifterSwift: Get element count based on condition.
+    /// 满足的数量
     ///
     ///        [2, 2, 4, 7].count(where: {$0 % 2 == 0}) -> 3
     ///
@@ -82,7 +82,7 @@ public extension Sequence {
         return count
     }
 
-    /// SwifterSwift: Iterate over a collection in reverse order. (right to left)
+    /// 翻转
     ///
     ///        [0, 2, 4, 7].forEachReversed({ print($0)}) -> //Order of print: 7,4,2,0
     ///
@@ -91,7 +91,7 @@ public extension Sequence {
         try reversed().forEach(body)
     }
 
-    /// SwifterSwift: Calls the given closure with each element where condition is true.
+    /// 满足条件遍历
     ///
     ///        [0, 2, 4, 7].forEach(where: {$0 % 2 == 0}, body: { print($0)}) -> //print: 0, 2, 4
     ///
@@ -104,7 +104,7 @@ public extension Sequence {
         }
     }
 
-    /// SwifterSwift: Reduces an array while returning each interim combination.
+    /// 费波列切数列
     ///
     ///     [1, 2, 3].accumulate(initial: 0, next: +) -> [1, 3, 6]
     ///
@@ -120,7 +120,7 @@ public extension Sequence {
         }
     }
 
-    /// SwifterSwift: Filtered and map in a single operation.
+    /// 筛选后映射
     ///
     ///     [1,2,3,4,5].filtered({ $0 % 2 == 0 }, map: { $0.string }) -> ["2", "4"]
     ///
@@ -137,7 +137,7 @@ public extension Sequence {
         })
     }
 
-    /// SwifterSwift: Get the only element based on a condition.
+    /// 是否只有一个
     ///
     ///     [].single(where: {_ in true}) -> nil
     ///     [4].single(where: {_ in true}) -> 4
@@ -162,7 +162,7 @@ public extension Sequence {
 
 public extension Sequence where Element: Equatable {
 
-    /// SwifterSwift: Check if array contains an array of elements.
+    /// 是否包含
     ///
     ///        [1, 2, 3, 4, 5].contains([1, 2]) -> true
     ///        [1.2, 2.3, 4.5, 3.4, 4.5].contains([2, 6]) -> false
@@ -184,7 +184,7 @@ public extension Sequence where Element: Equatable {
 
 public extension Sequence where Element: Hashable {
 
-    /// SwifterSwift: Check whether a sequence contains duplicates.
+    /// 是否包含重复.
     ///
     /// - Returns: true if the receiver contains duplicates.
     public func containsDuplicates() -> Bool {
@@ -202,7 +202,7 @@ public extension Sequence where Element: Hashable {
 // MARK: - Methods (Numeric)
 public extension Sequence where Element: Numeric {
 
-    /// SwifterSwift: Sum of all elements in array.
+    ///和
     ///
     ///        [1, 2, 3, 4, 5].sum() -> 15
     ///

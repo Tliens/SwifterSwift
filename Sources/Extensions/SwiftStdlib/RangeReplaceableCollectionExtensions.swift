@@ -13,8 +13,7 @@ import Foundation
 // MARK: - Initializers
 extension RangeReplaceableCollection {
 
-    /// Creates a new collection of a given size where for each position of the collection the value will be the result
-    /// of a call of the given expression.
+    /// 通过表达式和数量创建数组
     ///
     ///     let values = Array(expression: "Value", count: 3)
     ///     print(values)
@@ -38,7 +37,7 @@ extension RangeReplaceableCollection {
 // MARK: - Methods
 extension RangeReplaceableCollection {
 
-    /// SwifterSwift: Returns a new rotated collection by the given places.
+    /// 整数左移，负数左移
     ///
     ///     [1, 2, 3, 4].rotated(by: 1) -> [4,1,2,3]
     ///     [1, 2, 3, 4].rotated(by: 3) -> [2,3,4,1]
@@ -52,7 +51,7 @@ extension RangeReplaceableCollection {
         return copy.rotate(by: places)
     }
 
-    /// SwifterSwift: Rotate the collection by the given places.
+    /// 整数左移，负数左移
     ///
     ///     [1, 2, 3, 4].rotate(by: 1) -> [4,1,2,3]
     ///     [1, 2, 3, 4].rotate(by: 3) -> [2,3,4,1]
@@ -78,7 +77,7 @@ extension RangeReplaceableCollection {
         return self
     }
 
-    /// SwifterSwift: Removes the first element of the collection which satisfies the given predicate.
+    /// 移除满足条件的第一个
     ///
     ///        [1, 2, 2, 3, 4, 2, 5].removeFirst { $0 % 2 == 0 } -> [1, 2, 3, 4, 2, 5]
     ///        ["h", "e", "l", "l", "o"].removeFirst { $0 == "e" } -> ["h", "l", "l", "o"]
@@ -92,7 +91,7 @@ extension RangeReplaceableCollection {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Remove a random value from the collection.
+    /// 随机移除
     @discardableResult public mutating func removeRandomElement() -> Element? {
         guard let randomIndex = indices.randomElement() else { return nil }
         return remove(at: randomIndex)

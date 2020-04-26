@@ -10,7 +10,7 @@ import Foundation
 
 public extension StringProtocol where Index == String.Index {
 
-    /// SwifterSwift: The longest common suffix.
+    /// 最长的共有后缀。
     ///
     ///        "Hello world!".commonSuffix(with: "It's cold!") = "ld!"
     ///

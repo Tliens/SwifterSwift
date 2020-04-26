@@ -12,32 +12,32 @@ import Foundation
 // MARK: - Properties
 public extension SignedInteger {
 
-    /// SwifterSwift: Absolute value of integer number.
+    /// 绝对值
     public var abs: Self {
         return Swift.abs(self)
     }
 
-    /// SwifterSwift: Check if integer is positive.
+    /// 是否正数
     public var isPositive: Bool {
         return self > 0
     }
 
-    /// SwifterSwift: Check if integer is negative.
+    /// 是否负数
     public var isNegative: Bool {
         return self < 0
     }
 
-    /// SwifterSwift: Check if integer is even.
+    /// 是否偶数
     public var isEven: Bool {
         return (self % 2) == 0
     }
 
-    /// SwifterSwift: Check if integer is odd.
+    /// 是否奇数
     public var isOdd: Bool {
         return (self % 2) != 0
     }
 
-    /// SwifterSwift: String of format (XXh XXm) from seconds Int.
+    /// 秒转时分
     public var timeString: String {
         guard self > 0 else {
             return "0 sec"
@@ -63,7 +63,7 @@ public extension SignedInteger {
 public extension SignedInteger {
 
     // swiftlint:disable next identifier_name
-    /// SwifterSwift: Greatest common divisor of integer value and n.
+    /// 与n的最大公约数。
     ///
     /// - Parameter n: integer value to find gcd with.
     /// - Returns: greatest common divisor of self and n.
@@ -72,7 +72,7 @@ public extension SignedInteger {
     }
 
     // swiftlint:disable next identifier_name
-    /// SwifterSwift: Least common multiple of integer and n.
+    /// 和n的最小公倍数。
     ///
     /// - Parameter n: integer value to find lcm with.
     /// - Returns: least common multiple of self and n.
@@ -81,7 +81,7 @@ public extension SignedInteger {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Ordinal representation of an integer.
+    /// 整数的序数表示法。第几
     ///
     ///        print((12).ordinalString()) // prints "12th"
     ///

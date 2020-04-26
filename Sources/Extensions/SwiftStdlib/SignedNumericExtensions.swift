@@ -13,13 +13,13 @@ import Foundation
 // MARK: - Properties
 public extension SignedNumeric {
 
-    /// SwifterSwift: String.
+    /// 转string
     public var string: String {
         return String(describing: self)
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: String with number and current locale currency.
+    /// 带有数字和当前语言环境货币的字符串。
     public var asLocaleCurrency: String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -35,7 +35,7 @@ public extension SignedNumeric {
 public extension SignedNumeric {
 
     #if canImport(Foundation)
-    /// SwifterSwift: Spelled out representation of a number.
+    /// 数字转语言
     ///
     ///        print((12.32).spelledOutString()) // prints "twelve point three two"
     ///

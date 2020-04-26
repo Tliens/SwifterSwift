@@ -8,7 +8,7 @@
 
 extension RandomAccessCollection where Element: Equatable {
 
-    /// 指定项目的所有索引。
+    /// 指定check的值对应的索引值都有哪些
     ///
     ///        [1, 2, 2, 3, 4, 2, 5].indices(of 2) -> [1, 2, 5]
     ///        [1.2, 2.3, 4.5, 3.4, 4.5].indices(of 2.3) -> [1]
