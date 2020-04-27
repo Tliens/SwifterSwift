@@ -26,7 +26,7 @@ import CoreImage
 // MARK: - Properties
 public extension Color {
 
-    /// SwifterSwift: Random color.
+    /// 随机颜色
     public static var random: Color {
         let red = Int.random(in: 0...255)
         let green = Int.random(in: 0...255)
@@ -35,7 +35,7 @@ public extension Color {
     }
 
     // swiftlint:disable next large_tuple
-    /// SwifterSwift: RGB components for a Color (between 0 and 255).
+    /// rgb组成
     ///
     ///		UIColor.red.rgbComponents.red -> 255
     ///		NSColor.green.rgbComponents.green -> 255
@@ -54,7 +54,7 @@ public extension Color {
     }
 
     // swiftlint:disable next large_tuple
-    /// SwifterSwift: RGB components for a Color represented as CGFloat numbers (between 0 and 1)
+    /// rgb组成
     ///
     ///		UIColor.red.rgbComponents.red -> 1.0
     ///		NSColor.green.rgbComponents.green -> 1.0
@@ -73,7 +73,7 @@ public extension Color {
     }
 
     // swiftlint:disable next large_tuple
-    /// SwifterSwift: Get components of hue, saturation, and brightness, and alpha (read-only).
+    /// HSBA组成
     public var hsbaComponents: (hue: CGFloat, saturation: CGFloat, brightness: CGFloat, alpha: CGFloat) {
         var hue: CGFloat = 0.0
         var saturation: CGFloat = 0.0
@@ -84,7 +84,7 @@ public extension Color {
         return (hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
     }
 
-    /// SwifterSwift: Hexadecimal value string (read-only).
+    /// hexString 6位
     public var hexString: String {
         let components: [Int] = {
             let comps = cgColor.components!
@@ -94,7 +94,7 @@ public extension Color {
         return String(format: "#%02X%02X%02X", components[0], components[1], components[2])
     }
 
-    /// SwifterSwift: Short hexadecimal value string (read-only, if applicable).
+    /// hexString 3位
     public var shortHexString: String? {
         let string = hexString.replacingOccurrences(of: "#", with: "")
         let chrs = Array(string)
@@ -102,7 +102,7 @@ public extension Color {
         return "#\(chrs[0])\(chrs[2])\(chrs[4])"
     }
 
-    /// SwifterSwift: Short hexadecimal value string, or full hexadecimal string if not possible (read-only).
+    /// hexString 3位 或6 位
     public var shortHexOrHexString: String {
         let components: [Int] = {
             let comps = cgColor.components!
@@ -116,7 +116,7 @@ public extension Color {
         return "#\(chrs[0])\(chrs[2])\(chrs[4])"
     }
 
-    /// SwifterSwift: Alpha of Color (read-only).
+    /// alpha值
     public var alpha: CGFloat {
         return cgColor.alpha
     }
@@ -128,7 +128,7 @@ public extension Color {
     }
     #endif
 
-    /// SwifterSwift: Get UInt representation of a Color (read-only).
+    /// UInt组成
     public var uInt: UInt {
         let comps: [CGFloat] = {
             let comps = cgColor.components!
@@ -143,7 +143,7 @@ public extension Color {
         return UInt(colorAsUInt32)
     }
 
-    /// SwifterSwift: Get color complementary (read-only, if applicable).
+    /// 互补色
     public var complementary: Color? {
         let colorSpaceRGB = CGColorSpaceCreateDeviceRGB()
         let convertColorToRGBSpace: ((_ color: Color) -> Color?) = { color -> Color? in
@@ -173,7 +173,7 @@ public extension Color {
 // MARK: - Methods
 public extension Color {
 
-    /// SwifterSwift: Blend two Colors
+    /// 两个颜色 blend
     ///
     /// - Parameters:
     ///   - color1: first color to blend
@@ -221,7 +221,7 @@ public extension Color {
         return Color(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    /// SwifterSwift: Lighten a color
+    /// 颜色提亮
     ///
     ///     let color = Color(red: r, green: g, blue: b, alpha: a)
     ///     let lighterColor: Color = color.lighten(by: 0.2)
@@ -238,7 +238,7 @@ public extension Color {
                      alpha: alpha)
     }
 
-    /// SwifterSwift: Darken a color
+    /// 颜色变黑
     ///
     ///     let color = Color(red: r, green: g, blue: b, alpha: a)
     ///     let darkerColor: Color = color.darken(by: 0.2)
@@ -260,7 +260,7 @@ public extension Color {
 // MARK: - Initializers
 public extension Color {
 
-    /// SwifterSwift: Create Color from RGB values with optional transparency.
+    /// 创建颜色从RGB值与可选的透明度
     ///
     /// - Parameters:
     ///   - red: red component.
@@ -279,7 +279,7 @@ public extension Color {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: trans)
     }
 
-    /// SwifterSwift: Create Color from hexadecimal value with optional transparency.
+    /// init：从十六进制值与可选的透明度创建颜色.
     ///
     /// - Parameters:
     ///   - hex: hex Int (example: 0xDECEB5).
@@ -295,7 +295,7 @@ public extension Color {
         self.init(red: red, green: green, blue: blue, transparency: trans)
     }
 
-    /// SwifterSwift: Create Color from hexadecimal string with optional transparency (if applicable).
+    /// init：从十六进制字符串与可选的透明度创建
     ///
     /// - Parameters:
     ///   - hexString: hexadecimal string (examples: EDE7F6, 0xEDE7F6, #EDE7F6, #0ff, 0xF0F, ..).
@@ -328,7 +328,7 @@ public extension Color {
         self.init(red: red, green: green, blue: blue, transparency: trans)
     }
 
-    /// SwifterSwift: Create Color from a complementary of a Color (if applicable).
+    /// 从一种颜色的互补中创造出一种颜色
     ///
     /// - Parameter color: color of which opposite color is desired.
     public convenience init?(complementaryFor color: Color) {
@@ -360,7 +360,7 @@ public extension Color {
 // MARK: - Social
 public extension Color {
 
-    /// SwifterSwift: Brand identity color of popular social media platform.
+    /// 大众社交媒体平台的品牌身份色彩。
     public struct Social {
         // https://www.lockedowndesign.com/social-media-colors/
 
@@ -451,7 +451,7 @@ public extension Color {
 // MARK: - Material colors
 public extension Color {
 
-    /// SwifterSwift: Google Material design colors palette.
+    /// Google Material设计颜色调色板。
     public struct Material {
         // https://material.google.com/style/color.html
 
@@ -1286,7 +1286,7 @@ public extension Color {
 // MARK: - CSS colors
 public extension Color {
 
-    /// SwifterSwift: CSS colors.
+    /// CSS colors.
     public struct CSS {
         // http://www.w3schools.com/colors/colors_names.asp
 
@@ -1740,7 +1740,7 @@ public extension Color {
 // MARK: - Flat UI colors
 public extension Color {
 
-    /// SwifterSwift: Flat UI colors
+    /// 平面UI颜色
     public struct FlatUI {
         // http://flatuicolors.com.
 
