@@ -329,7 +329,7 @@ public extension String {
         return Int(self)
     }
 
-    /// SwifterSwift: Lorem ipsum string of given length.
+    /// 给定长度的伪文本。
     ///
     /// - Parameter length: number of characters to limit lorem ipsum to (default is 445 - full lorem ipsum).
     /// - Returns: Lorem ipsum dolor sit amet... string.
@@ -347,7 +347,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: URL from string (if applicable).
+    /// 从string创建URL
     ///
     ///		"https://google.com".url -> URL(string: "https://google.com")
     ///		"not url".url -> nil
@@ -358,7 +358,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: String with no spaces or new lines in beginning and end.
+    /// 去掉首位的空格和换行
     ///
     ///		"   hello  \n".trimmed -> "hello"
     ///
@@ -368,7 +368,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Readable string from a URL string.
+    /// 移除百分号编码
     ///
     ///		"it's%20easy%20to%20decode%20strings".urlDecoded -> "it's easy to decode strings"
     ///
@@ -378,7 +378,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: URL escaped string.
+    /// urlEncoded
     ///
     ///		"it's easy to encode strings".urlEncoded -> "it's%20easy%20to%20encode%20strings"
     ///
@@ -388,7 +388,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: String without spaces and new lines.
+    /// 字符串没有空格和新行
     ///
     ///		"   \n Swifter   \n  Swift  ".withoutSpacesAndNewLines -> "SwifterSwift"
     ///
@@ -398,14 +398,14 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if the given string contains only white spaces
+    /// 检查是否有空格和换行
     public var isWhitespace: Bool {
         return trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// SwifterSwift: Check if the given string spelled correctly
+    /// 检查给定的字符串拼写是否正确
     public var isSpelledCorrectly: Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: utf16.count)
@@ -421,7 +421,7 @@ public extension String {
 public extension String {
 
     #if canImport(Foundation)
-    /// Float value from string (if applicable).
+    /// 转float
     ///
     /// - Parameter locale: Locale (default is Locale.current)
     /// - Returns: Optional Float value from given string.
@@ -434,7 +434,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// Double value from string (if applicable).
+    /// 转double
     ///
     /// - Parameter locale: Locale (default is Locale.current)
     /// - Returns: Optional Double value from given string.
@@ -447,7 +447,7 @@ public extension String {
     #endif
 
     #if canImport(CoreGraphics) && canImport(Foundation)
-    /// CGFloat value from string (if applicable).
+    /// 转 CGFloat
     ///
     /// - Parameter locale: Locale (default is Locale.current)
     /// - Returns: Optional CGFloat value from given string.
@@ -460,7 +460,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Array of strings separated by new lines.
+    /// 通过换行符拆分
     ///
     ///		"Hello\ntest".lines() -> ["Hello", "test"]
     ///
@@ -475,7 +475,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Returns a localized string, with an optional comment for translators.
+    /// 返回本地化的字符串，并为翻译人员提供可选的注释。
     ///
     ///        "Hello world".localized -> Hallo Welt
     ///
@@ -484,7 +484,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: The most common character in string.
+    /// 字符串中最多的字符。
     ///
     ///		"This is a test, since e is appearing everywhere e should be the common character".mostCommonCharacter() -> "e"
     ///
@@ -498,7 +498,7 @@ public extension String {
         return mostCommon
     }
 
-    /// SwifterSwift: Array with unicodes for all characters in a string.
+    /// 所有字符的unicode
     ///
     ///		"SwifterSwift".unicodeArray() -> [83, 119, 105, 102, 116, 101, 114, 83, 119, 105, 102, 116]
     ///
@@ -508,7 +508,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: an array of all words in a string
+    /// 字符串中所有单词的数组
     ///
     ///		"Swift is amazing".words() -> ["Swift", "is", "amazing"]
     ///
@@ -522,7 +522,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Count of words in a string.
+    /// 字符串中单词的数量
     ///
     ///		"Swift is amazing".wordsCount() -> 3
     ///
@@ -537,7 +537,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Transforms the string into a slug string.
+    /// 空格转横线
     ///
     ///        "Swift is amazing".toSlug() -> "swift-is-amazing"
     ///
@@ -566,7 +566,7 @@ public extension String {
     }
     #endif
 
-    // swiftlint:disable next identifier_name
+    // 字符串安全提取
     /// SwifterSwift: Safely subscript string with index.
     ///
     ///		"Hello World!"[safe: 3] -> "l"
@@ -578,7 +578,7 @@ public extension String {
         return self[index(startIndex, offsetBy: i)]
     }
 
-    /// SwifterSwift: Safely subscript string within a half-open range.
+    /// 字符串安全范围提取，包含起点，不包含终点
     ///
     ///		"Hello World!"[safe: 6..<11] -> "World"
     ///		"Hello World!"[safe: 21..<110] -> nil
@@ -590,7 +590,7 @@ public extension String {
         return String(self[lowerIndex..<upperIndex])
     }
 
-    /// SwifterSwift: Safely subscript string within a closed range.
+    /// 字符串安全范围提取，包含起止点
     ///
     ///		"Hello World!"[safe: 6...11] -> "World!"
     ///		"Hello World!"[safe: 21...110] -> nil
@@ -603,7 +603,7 @@ public extension String {
     }
 
     #if os(iOS) || os(macOS)
-    /// SwifterSwift: Copy string to global pasteboard.
+    /// 放到剪贴板中
     ///
     ///		"SomeText".copyToPasteboard() // copies "SomeText" to pasteboard
     ///
@@ -617,7 +617,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Converts string format to CamelCase.
+    /// 标准驼峰
     ///
     ///		var str = "sOme vaRiabLe Name"
     ///		str.camelize()
@@ -638,7 +638,7 @@ public extension String {
         self = first + rest
     }
 
-    /// SwifterSwift: First character of string uppercased(if applicable) while keeping the original string.
+    /// 第一个字符大写
     ///
     ///        "hello world".firstCharacterUppercased() -> "Hello world"
     ///        "".firstCharacterUppercased() -> ""
@@ -648,7 +648,7 @@ public extension String {
         self = String(first).uppercased() + dropFirst()
     }
 
-    /// SwifterSwift: Check if string contains only unique characters.
+    /// 检查字符串是否只包含唯一字符。
     ///
     public func hasUniqueCharacters() -> Bool {
         guard count > 0 else { return false }
@@ -661,7 +661,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Check if string contains one or more instance of substring.
+    /// 检查字符串是否包含子字符串的一个或多个实例。caseSensitive表示是否区分大小写
     ///
     ///		"Hello World!".contain("O") -> false
     ///		"Hello World!".contain("o", caseSensitive: false) -> true
@@ -679,7 +679,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Count of substring in string.
+    /// 字符串中子字符串的计数。
     ///
     ///		"Hello World!".count(of: "o") -> 2
     ///		"Hello World!".count(of: "L", caseSensitive: false) -> 3
@@ -696,7 +696,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Check if string ends with substring.
+    /// 检查字符串是否以子字符串结束。
     ///
     ///		"Hello World!".ends(with: "!") -> true
     ///		"Hello World!".ends(with: "WoRld!", caseSensitive: false) -> true
@@ -724,7 +724,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Random string of given length.
+    /// 随机字符串
     ///
     ///		String.random(ofLength: 18) -> "u7MMZYvGo9obcOcPj8"
     ///
@@ -740,14 +740,14 @@ public extension String {
         return randomString
     }
 
-    /// SwifterSwift: Reverse string.
+    /// 翻转
     public mutating func reverse() {
         let chars: [Character] = reversed()
         self = String(chars)
     }
 
     // swiftlint:disable next identifier_name
-    /// SwifterSwift: Sliced string from a start index with length.
+    /// 提取字符串根据起始值和长度
     ///
     ///        "Hello World".slicing(from: 6, length: 5) -> "World"
     ///
@@ -765,7 +765,7 @@ public extension String {
     }
 
     // swiftlint:disable next identifier_name
-    /// SwifterSwift: Slice given string from a start index with length (if applicable).
+    /// 提取字符串根据起始值和长度，并赋值
     ///
     ///		var str = "Hello World"
     ///		str.slice(from: 6, length: 5)
@@ -780,7 +780,7 @@ public extension String {
         }
     }
 
-    /// SwifterSwift: Slice given string from a start index to an end index (if applicable).
+    /// 提取从起始值到结束值
     ///
     ///		var str = "Hello World"
     ///		str.slice(from: 6, to: 11)
@@ -797,7 +797,7 @@ public extension String {
     }
 
     // swiftlint:disable next identifier_name
-    /// SwifterSwift: Slice given string from a start index (if applicable).
+    /// 提取从起始值到结束
     ///
     ///		var str = "Hello World"
     ///		str.slice(at: 6)
@@ -811,7 +811,7 @@ public extension String {
         }
     }
 
-    /// SwifterSwift: Check if string starts with substring.
+    /// 检查字符串是否以子字符串开始。
     ///
     ///		"hello World".starts(with: "h") -> true
     ///		"hello World".starts(with: "H", caseSensitive: false) -> true
@@ -828,7 +828,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Date object from string of date format.
+    /// 字符串转时间
     ///
     ///		"2017-01-15".date(withFormat: "yyyy-MM-dd") -> Date set to Jan 15, 2017
     ///		"not date string".date(withFormat: "yyyy-MM-dd") -> nil
@@ -843,7 +843,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Removes spaces and new lines in beginning and end of string.
+    /// 删除字符串开头和结尾的空格和新行。
     ///
     ///		var str = "  \n Hello World \n\n\n"
     ///		str.trim()
@@ -854,7 +854,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Truncate string (cut it to a given number of characters).
+    /// 截断字符串(将其截断为给定数目的字符)。
     ///
     ///		var str = "This is a very long sentence"
     ///		str.truncate(toLength: 14)
@@ -870,7 +870,7 @@ public extension String {
         }
     }
 
-    /// SwifterSwift: Truncated string (limited to a given number of characters).
+    /// 截断的字符串(限制为给定的字符数)。
     ///
     ///		"This is a very long sentence".truncated(toLength: 14) -> "This is a very..."
     ///		"Short sentence".truncated(toLength: 14) -> "Short sentence"
@@ -885,7 +885,7 @@ public extension String {
     }
 
     #if canImport(Foundation)
-    /// SwifterSwift: Convert URL string to readable string.
+    /// 将URL字符串转换为可读字符串。
     ///
     ///		var str = "it's%20easy%20to%20decode%20strings"
     ///		str.urlDecode()
@@ -899,7 +899,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Escape string.
+    /// 转义字符串
     ///
     ///		var str = "it's easy to encode strings"
     ///		str.urlEncode()
@@ -913,7 +913,7 @@ public extension String {
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Verify if string matches the regex pattern.
+    /// 验证字符串是否匹配regex模式。
     ///
     /// - Parameter pattern: Pattern to verify.
     /// - Returns: true if string matches the pattern.
@@ -922,7 +922,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Pad string to fit the length parameter size with another string in the start.
+    /// 填充字符串以使长度参数大小与开始时的另一个字符串相匹配。
     ///
     ///   "hue".padStart(10) -> "       hue"
     ///   "hue".padStart(10, with: "br") -> "brbrbrbhue"
@@ -933,7 +933,7 @@ public extension String {
         self = paddingStart(length, with: string)
     }
 
-    /// SwifterSwift: Returns a string by padding to fit the length parameter size with another string in the start.
+    /// 通过填充以使长度参数大小与开始时的另一个字符串相匹配，返回一个字符串。
     ///
     ///   "hue".paddingStart(10) -> "       hue"
     ///   "hue".paddingStart(10, with: "br") -> "brbrbrbhue"
@@ -956,7 +956,7 @@ public extension String {
         }
     }
 
-    /// SwifterSwift: Pad string to fit the length parameter size with another string in the start.
+    /// 填充字符串以使长度参数大小
     ///
     ///   "hue".padEnd(10) -> "hue       "
     ///   "hue".padEnd(10, with: "br") -> "huebrbrbrb"
@@ -990,7 +990,7 @@ public extension String {
         }
     }
 
-    /// SwifterSwift: Removes given prefix from the string.
+    /// 移除前缀
     ///
     ///   "Hello, World!".removingPrefix("Hello, ") -> "World!"
     ///
@@ -1018,7 +1018,7 @@ public extension String {
 public extension String {
 
     #if canImport(Foundation)
-    /// SwifterSwift: Create a new string from a base64 string (if applicable).
+    /// init: base64
     ///
     ///		String(base64: "SGVsbG8gV29ybGQh") = "Hello World!"
     ///		String(base64: "hello") = nil
@@ -1031,7 +1031,7 @@ public extension String {
     }
     #endif
 
-    /// SwifterSwift: Create a new random string of given length.
+    /// 给定长度的随机数字
     ///
     ///		String(randomOfLength: 10) -> "gY8r3MHvlQ"
     ///
@@ -1064,35 +1064,35 @@ public extension String {
     #endif
 
     #if os(iOS) || os(macOS)
-    /// SwifterSwift: Bold string.
+    /// 加粗
     public var bold: NSAttributedString {
         return NSMutableAttributedString(string: self, attributes: [.font: Font.boldSystemFont(ofSize: Font.systemFontSize)])
     }
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Underlined string
+    /// 下划线
     public var underline: NSAttributedString {
         return NSAttributedString(string: self, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
     }
     #endif
 
     #if canImport(Foundation)
-    /// SwifterSwift: Strikethrough string.
+    /// 删除线
     public var strikethrough: NSAttributedString {
         return NSAttributedString(string: self, attributes: [.strikethroughStyle: NSNumber(value: NSUnderlineStyle.single.rawValue as Int)])
     }
     #endif
 
     #if os(iOS)
-    /// SwifterSwift: Italic string.
+    /// 斜体
     public var italic: NSAttributedString {
         return NSMutableAttributedString(string: self, attributes: [.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
     }
     #endif
 
     #if canImport(UIKit)
-    /// SwifterSwift: Add color to string.
+    /// 字体颜色
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString versions of string colored with given color.
@@ -1102,7 +1102,7 @@ public extension String {
     #endif
 
     #if canImport(Cocoa)
-    /// SwifterSwift: Add color to string.
+    /// 字体颜色
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString versions of string colored with given color.
@@ -1116,7 +1116,7 @@ public extension String {
 // MARK: - Operators
 public extension String {
 
-    /// SwifterSwift: Repeat string multiple times.
+    /// 重复
     ///
     ///        'bar' * 3 -> "barbarbar"
     ///
@@ -1129,7 +1129,7 @@ public extension String {
         return String(repeating: lhs, count: rhs)
     }
 
-    /// SwifterSwift: Repeat string multiple times.
+    /// 重复
     ///
     ///        3 * 'bar' -> "barbarbar"
     ///
@@ -1148,37 +1148,37 @@ public extension String {
 // MARK: - NSString extensions
 public extension String {
 
-    /// SwifterSwift: NSString from a string.
+    /// 转NSString
     public var nsString: NSString {
         return NSString(string: self)
     }
 
-    /// SwifterSwift: NSString lastPathComponent.
+    /// 最后的路径成分
     public var lastPathComponent: String {
         return (self as NSString).lastPathComponent
     }
 
-    /// SwifterSwift: NSString pathExtension.
+    /// 路径后缀
     public var pathExtension: String {
         return (self as NSString).pathExtension
     }
 
-    /// SwifterSwift: NSString deletingLastPathComponent.
+    /// 删除最后的路径成分
     public var deletingLastPathComponent: String {
         return (self as NSString).deletingLastPathComponent
     }
 
-    /// SwifterSwift: NSString deletingPathExtension.
+    /// 删除后缀
     public var deletingPathExtension: String {
         return (self as NSString).deletingPathExtension
     }
 
-    /// SwifterSwift: NSString pathComponents.
+    /// 路径组成数组
     public var pathComponents: [String] {
         return (self as NSString).pathComponents
     }
 
-    /// SwifterSwift: NSString appendingPathComponent(str: String)
+    /// 最佳路径成分
     ///
     /// - Parameter str: the path component to append to the receiver.
     /// - Returns: a new string made by appending aString to the receiver, preceded if necessary by a path separator.
@@ -1186,7 +1186,7 @@ public extension String {
         return (self as NSString).appendingPathComponent(str)
     }
 
-    /// SwifterSwift: NSString appendingPathExtension(str: String)
+    ///追加路径后缀
     ///
     /// - Parameter str: The extension to append to the receiver.
     /// - Returns: a new string made by appending to the receiver an extension separator followed by ext (if applicable).
